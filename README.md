@@ -1,22 +1,22 @@
-# ME414 Introduction to Data Science and Big Data Analytics #
+# ME314 Introduction to Data Science and Big Data Analytics #
 
 
-#### LSE Methods Summer Programme 2017
+#### LSE Methods Summer Programme 2018
 
 [Kenneth Benoit](kbenoit@lse.ac.uk), Department of Methodology, LSE  
 [Slava Mikhaylov](s.mikhaylov@essex.ac.uk), Institute for Analytics and Data Science, University of Essex  
 [Jack Blumenau](J.Blumenau@lse.ac.uk), Department of Political Science, UCL
 
-[Altaf Ali](altaf.ali.13@ucl.ac.uk), Department of Political Science, UCL
-
-This repository contains the class materials for the [LSE Methods Summer Programme](http://www.lse.ac.uk/study/summerSchools/Methods/home.aspx) course [*ME414 Introduction to Data Science and Big Data Analytics*](http://www.lse.ac.uk/study/summerSchools/Methods/Quantitative/ME414.aspx) taught in August 2017 by Kenneth Benoit, Slava Mikhaylov, Jack Blumenau, and Altaf Ali.  
+This repository contains the class materials for the [Research Methods, Data Science, and Mathematics](https://www.lse.ac.uk/study-at-lse/Summer-Schools/Summer-School/Courses/Secure/Research-Methods-Data-Science-and-Mathematics) course [*ME314 Introduction to Data Science and Big Data Analytics*](https://www.lse.ac.uk/study-at-lse/Summer-Schools/Summer-School/Courses/Secure/Research-Methods-Data-Science-and-Mathematics/ME314) taught in July-August 2018 by Kenneth Benoit, Slava Mikhaylov, and Jack Blumenau.  
 
 
 ### Overview
 
-Data Science and Big Data Analytics are exciting new areas that combine scientific inquiry, statistical knowledge, substantive expertise, and computer programming. One of the main challenges for businesses and policy makers when using big data is to find people with the appropriate skills. Good data science requires experts that combine substantive knowledge with data analytical skills, which makes it a prime area for social scientists with an interest in quantitative methods. This course integrates prior training in quantitative methods (statistics) and coding with substantive expertise and introduces the fundamental concepts and techniques of Data Science and Big Data Analytics.
+Data Science and Big Data Analytics are exciting new areas that combine scientific inquiry, statistical knowledge, substantive expertise, and computer programming. One of the main challenges for businesses and policy makers when using big data is to find people with the appropriate skills. Good data science requires experts that combine substantive knowledge with data analytical skills, which makes it a prime area for social scientists with an interest in quantitative methods.
 
-Typical students will be Masters and PhD students from any field requiring the fundamentals of data science or working with typically large datasets and databases. Practitioners from industry, government, or research organisations with some basic training in quantitative analysis or computer programming are also welcome. Because this course surveys diverse techniques and methods, it makes an ideal foundation for more advanced or more specific training. Our applications are drawn from social, political, economic, legal, and business and marketing fields, rather than engineering or other sciences.
+This course integrates prior training in quantitative methods (statistics) and coding with substantive expertise and introduces the fundamental concepts and techniques of Data Science and Big Data Analytics.
+
+Typical students will be advanced undergraduate and postgraduate students from any field requiring the fundamentals of data science or working with typically large datasets and databases. Practitioners from industry, government, or research organisations with some basic training in quantitative analysis or computer programming are also welcome. Because this course surveys diverse techniques and methods, it makes an ideal foundation for more advanced or more specific training. Our applications are drawn from social, political, economic, legal, and business and marketing fields.
 
 ### Objectives
 
@@ -24,19 +24,22 @@ This course aims to provide an introduction to the data science approach to the 
 
 The course will be delivered as a series of morning lectures, followed by lab sessions in the afternoon where students will apply the lessons in a series of instructor-guided exercises using data provided as part of the exercises. The course will cover the following topics:
 
-* an overview of data science and the challenge of working with big data using statistical methods
-* how to integrate the insights from data analytics into knowledge generation and decision-making
-* how to acquire data, both structured and unstructured, and to process it, store it, and convert it into a format suitable for analysis
-* an overview of regression and classification methods and related methods for assessing model fit and cross-validating predictive models
-* supervised learning approaches, including linear and logistic regression, decision trees, and naive Bayes
-* unsupervised learning approaches, including clustering, association rules, and principal components analysis
-* quantitative methods of text analysis, including mining social media and other online resources
-
+- an overview of data science and the challenge of working with big data using statistical methods  
+- how to integrate the insights from data analytics into knowledge generation and decision-making  
+- how to acquire data, both structured and unstructured, and to process it, store it, and convert it into a format suitable for analysis  
+- approaches to normalising data, using a database manager (SQLite), and working with SQL database queries  
+- the basics of statistical inference including probability and probability distributions, modelling, experimental design  
+- an overview of classification methods and related methods for assessing model fit and cross-validating predictive models  
+- supervised learning approaches, including linear and logistic regression, decision trees, and naïve Bayes  
+- unsupervised learning approaches, including clustering, association rules, and principal components analysis  
+- quantitative methods of text analysis, including mining social media and other online resources  
+- social network analysis, covering the basics of social graph data and analysing social networks  
+- data visualisation through a variety of graphs.  
 
 
 ### Prerequisites
 
-An introduction to quantitative methods at any level would serve as a very useful foundation for this course, although no formal prerequisites are required. Familiarity with computer programming or database structures is a benefit, but not formally required.
+Students should already be familiar with quantitative methods at an introductory level, up to linear regression analysis. Familiarity with computer programming or database structures is a benefit, but not formally required.
 
 
 ### Preparing for the course
@@ -57,13 +60,13 @@ We strongly recommend you spend some of July and August before the course workin
 * Garrett Grolemund and Hadley Wickham (2016) _R for Data Science_, O'Reilly Media. Note: Online version is available from the authors' page [here](http://r4ds.had.co.nz/index.html).
 * James et al. (2013) _An Introduction to Statistical Learning: With applications in R_, Springer, Chapters 1--2. Note: The book is available from the authors' page [here](http://www-bcf.usc.edu/~gareth/ISL/).
 
-If you start preparing for the course (with the above materials) using your own laptop, it may be more convenient for you to continue using it during the summer school. 
+If you start preparing for the course (with the above materials) using your own laptop, it may be more convenient for you to continue using it during the summer school.
 
 ### Important Specifics
 
 #### Computer Software
 
-Computer-based exercises will feature prominently in the course, especially in the lab sessions.  The use of all software tools will be explained in the sessions, including how to download and install them.  All of the class work will be done using R, using publicly available packages. 
+Computer-based exercises will feature prominently in the course, especially in the lab sessions.  The use of all software tools will be explained in the sessions, including how to download and install them.  All of the class work will be done using R, using publicly available packages.
 
 
 #### Main Texts
@@ -95,9 +98,9 @@ Each homework will be a single file in the [RMarkdown](http://rmarkdown.rstudio.
     Each day below will link the name of a starter file for you to download and work with.  These are in the RMarkdown format.  You should embed your answers, with code, into your version of the instruction files.
 
 2.  Renaming the starter files.  
-    
+
     For example, the first assignment file is named `ME414_assignment1_LASTNAME_FIRSTNAME.Rmd`, which you will need to rename by replacing the uppercase terms with your own last and first names, e.g.  `ME414_assignment1_Bloggs_Joe.Rmd`.
-    
+
 3.  From RStudio, you can create an HTML output file with your evaluated code, figure, and text answers by clicking the "Knit HTML" button in the top of the editor pane in RStudio.  The resulting HTML file will be saved in your working directory.
 
 4.  You will need to upload the resulting HTML file -- renamed! -- to the [course Moodle page](https://shortcourses.lse.ac.uk/course/view.php?id=158), to the appropriate assignment folder.  
@@ -117,9 +120,9 @@ You have three options for downloading the course material found on this page:
 
 3.  Statically, you can choose the button on the right marked "Download zip" which will download the entire repository as a zip file.
 
-You can also subscribe to the repository if you have [a GitHub account](https://github.com), which will send you updates each time new changes are pushed to the repository. 
+You can also subscribe to the repository if you have [a GitHub account](https://github.com), which will send you updates each time new changes are pushed to the repository.
 
-You can read more about using GitHub with RStudio in Hadley Wickham's _R Packages_ [book Chapter 13](http://r-pkgs.had.co.nz/git.html). 
+You can read more about using GitHub with RStudio in Hadley Wickham's _R Packages_ [book Chapter 13](http://r-pkgs.had.co.nz/git.html).
 
 
 ### Instructors
@@ -127,18 +130,16 @@ You can read more about using GitHub with RStudio in Hadley Wickham's _R Package
 **Kenneth Benoit** is Professor of Quantitative Social Research Methods at the Department of Methodology, LSE. With a background in political science, his substantive work focuses on political party competition, political measurement issues, and electoral systems. His research and teaching is primarily in the field of social science statistical applications. His recent work concerns the quantitative analysis of text as data, for which he has developed a package for the R statistical software.
 
 
-**Slava Mikhaylov** is Professor of Public Policy and Data Science at Institute of Analytics and Data Science and Department of Government, University of Essex. He's a Chief Scientific Advisor to Essex County Council and a co-investigator in an ESRC Big Data infrastructure investment initiative – Consumer Data Research Centre at UCL. His research and teaching is primarily in the field of computational social science and data science. 
+**Slava Mikhaylov** is Professor of Public Policy and Data Science at Institute of Analytics and Data Science and Department of Government, University of Essex. He's a Chief Scientific Advisor to Essex County Council and a co-investigator in an ESRC Big Data infrastructure investment initiative – Consumer Data Research Centre at UCL. His research and teaching is primarily in the field of computational social science and data science.
 
 **Dr. Jack Blumenau** is a Lecturer in Quantitative Methods at the UCL Department of Political Science. he was previously an ESRC "Future Research Leader" post-doc in the Methodology Department at the LSE. His research explores the effects of legislative leaders on the behaviour of parliamentarians in the European Parliament and the UK House of Commons.
-
-**Altaf Ali** is a PhD student and Teaching Fellow in the Department of Political Science at University College London. His PhD thesis analyzes event data to model escalation patterns of armed intrastate conflicts. His research is focused on the application of machine learning methods to gain insights from data within the field of social sciences.
 
 
 ### Course Schedule
 
 ***
 
-#### __*Monday, 14 August: Overview and introduction to data science [SM,KB]*__
+#### __*Monday, 30 July: Overview and introduction to data science [SM,KB]*__
 We will use this session to get to know the range of interests and experience students bring to the class, as well as to survey the machine learning approaches to be covered. We will also discuss and demonstrate the R software.
 
 ##### Resources
@@ -167,9 +168,9 @@ We will use this session to get to know the range of interests and experience st
 
 ***
 
-#### __*Tuesday, 15 August: Data structures and databases [KB]*__  
+#### __*Tuesday, 31 July: Data structures and databases [KB]*__  
 Data types and formats, record cleaning, linkage, SQL, JSON, massive data processing.
- 
+
 ##### Resources
 
 * [Lecture Notes](day2/ME414_day2.pdf)
@@ -190,7 +191,7 @@ Data types and formats, record cleaning, linkage, SQL, JSON, massive data proces
 
 ***
 
-#### __*Wednesday, 16 August: Linear Regression [KB]*__ 
+#### __*Wednesday, 1 August: Linear Regression [KB]*__
 Linear regression model and supervised learning.
 
 ##### Resources
@@ -208,13 +209,13 @@ Linear regression model and supervised learning.
 
 ***
 
-#### __*Thursday, 17 August: Classification [SM]*__ 
+#### __*Thursday, 2 August: Classification [SM]*__
 Logistic regression, discriminant analysis, Naive Bayes, evaluating model performance.
 
 ##### Resources
 
 * [Lecture Notes](day4/ME414_day4.pdf)
-* [Assignment 4 as R markdown](day4/ME414_assignment4_LASTNAME_FIRSTNAME.Rmd) 
+* [Assignment 4 as R markdown](day4/ME414_assignment4_LASTNAME_FIRSTNAME.Rmd)
 * Assignment 4 **solution** as [R markdown](day4/ME414_assignment4_solution.Rmd)
 
 ##### Required reading:
@@ -227,7 +228,7 @@ Logistic regression, discriminant analysis, Naive Bayes, evaluating model perfor
 
 ***
 
-#### __*Friday, 18 August: Resampling methods, model selection and regularization [SM]*__
+#### __*Monday, 6 August: Resampling methods, model selection and regularization [SM]*__
 Cross-validation, bootstrap, ridge and lasso.
 
 ##### Resources
@@ -245,14 +246,14 @@ Cross-validation, bootstrap, ridge and lasso.
 
 ***
 
-#### __*Monday, 21 August: Non-linear models and tree-based methods [SM]*__
+#### __*Tuesday, 7 August: Non-linear models and tree-based methods [SM]*__
 GAMs, local regression, decision trees, random forest, boosting.
 
 ##### Resources
 
 * [Lecture Notes](day6/ME414_day6.pdf)
 * [RandomForest research example](day6/example_random_forest_Ukraine.pdf)
-* [Assignment 6 as R markdown](day6/ME414_assignment6_LASTNAME_FIRSTNAME.Rmd) 
+* [Assignment 6 as R markdown](day6/ME414_assignment6_LASTNAME_FIRSTNAME.Rmd)
 * Assignment 6 **solution** as [R markdown](day6/ME414_assignment6_solution.Rmd)
 
 ##### Required reading:
@@ -261,11 +262,11 @@ GAMs, local regression, decision trees, random forest, boosting.
 ##### Recommended Reading:
 * Lesmeister, Chapter 6.
 * Zumel and Mount, Chapter 9.1-9.3.
-* Muchlinksi, D., Siroky, D., Jingrui, H., Kocher, M., (2016) ``Comparing Random Forest with Logistic Regression for Predicting Class-Imbalanced Civil War Onset Data.'' _Political Analysis_, 24(1): 87-103.
+* Muchlinksi, D., Siroky, D., Jingrui, H., Kocher, M., (2016) "Comparing Random Forest with Logistic Regression for Predicting Class-Imbalanced Civil War Onset Data." _Political Analysis_, 24(1): 87-103.
 
 ***
 
-#### __*Tuesday, 22 August: Unsupervised learning and dimensional reduction [SM]*__
+#### __*Wednesday, 8 August: Unsupervised learning and dimensional reduction [SM]*__
 Cluster analysis, PCA, correspondence analysis, association rules.
 
 ##### Resources
@@ -286,7 +287,7 @@ Cluster analysis, PCA, correspondence analysis, association rules.
 
 ***
 
-#### __*Wednesday, 23 August: Text analysis [JB]*__
+#### __*Thursday, 9 August: Text analysis [JB]*__
 Working with text in R, sentiment analysis, dictionary methods.
 
 ##### Resources
@@ -299,14 +300,14 @@ Working with text in R, sentiment analysis, dictionary methods.
 ##### Required reading:
 * Grimmer, J, and B M Stewart (2013), ``Text as Data: the Promise and Pitfalls of Automatic Content Analysis Methods for Political Texts.'' _Political Analysis_.
 * Benoit, Kenneth and Alexander Herzog. In press. [``Text Analysis: Estimating Policy Preferences From Written and Spoken Words.''](http://www.kenbenoit.net/pdfs/HerzogBenoit_bookchapter.pdf).'' In _Analytics, Policy and Governance_, eds. Jennifer Bachner, Kathyrn Wagner Hill, and Benjamin Ginsberg.
-  
+
 ##### Recommended Reading:
 * Spirling, A. (2012), ``U.S. Treaty Making with American Indians: Institutional Change and Relative Power, 1784–1911.'' _American Journal of Political Science_, 56: 84--97.
 * Herzog, A. and K. Benoit (2015), ``The most unkindest cuts: Speaker selection and expressed government dissent during economic crisis.'' _Journal of Politics_, 77(4):1157--1175.
 
 ***
 
-#### __*Thursday, 24 August: Topic modelling [JB]*__
+#### __*Monday, 13 August: Topic modelling [JB]*__
 
 ##### Resources
 
@@ -330,7 +331,7 @@ Working with text in R, sentiment analysis, dictionary methods.
 
 ***
 
-#### __*Friday, 25 August: Mining the Social Web [JB]*__
+#### __*Tuesday, 14 August: Mining the Social Web [JB]*__
 Working with the Twitter API, Facebook API, JSON data, and examples.
 
 ##### Resources
@@ -361,11 +362,17 @@ Working with the Twitter API, Facebook API, JSON data, and examples.
 * Matthew Russell (2013). _Mining the Social Web_. O'Reilly Media. 2nd edition.
 
 
+#### __*Wednesday, 15 August: TBC*__
+
+
+#### __*Thursday, 16 August: TBC*__
+
+
+
 ### Assessment
 
-#### __Exam: Friday, 25 August, Time: 14:00-16:00, Room: TBC__
+#### __Exam: Friday, 27 August, Time: 14:00-16:00, Room: TBC__
 
 * __Instructions:__  Complete and submit the exam just as you would any lab assignment: by renaming the file, editing the R Markdown, knitting, and submitting through Moodle your knitted HTML file. Moodle page for the course is linked [here:](https://shortcourses.lse.ac.uk/course/view.php?id=158).
 * __Formatting:__  Put your own textual answers in boldface (using `**boldface type**` in RMarkdown), so that we can easily identify them when reviewing your HTML file.
-* __Deadline:__ Monday 28 August 17:00 London time (GMT+1)
-
+* __Deadline:__ Monday 20 August 17:00 London time (GMT+1)
