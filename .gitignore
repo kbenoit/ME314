@@ -1,0 +1,13 @@
+.R*
+ME_114_Ken_github.Rproj
+*.Rproj
+.Rd2pdf*
+__MACOSX
+.DS_Store
+.Rproj.user
+inst/doc
+.Rhistory
+.RData
+*UNUSED.Rmd
+*OLD*
+.httr-oauth

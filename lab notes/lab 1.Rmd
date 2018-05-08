@@ -1,0 +1,79 @@
+---
+title: "Common problems with lab 1"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Generally, the use of Rmarkdown was very good. But...
+
+ 1. Pay attention to the options specified in your R code chunks. These dictate the output that is printed to the HTML file. For instance, if your chunk includes `{r, eval = FALSE}` then the code within the chunk will not be evaluated when you knit the HMTL. 
+    i. `eval`: should Rmarkdown evaluate the R code?
+    ii. `echo`: should Rmarkdown print the R code to the HTML?
+    iii. `warning`: should Rmarkdown report warning messages in the HTML?
+    
+   For a full list of the options that can be passed to these chunks, see the Rmarkdown cheat sheet (`help -> cheetsheets -> R markdown cheet sheet`).
+
+ 2. Please sumbit the HTML file produced by Rmarkdown, not the `.Rmd` file. There is no point learning how to make beautiful reports if you are just going to show us the code!
+ 
+ 3. In question c.iii, lots of people struggled with producing the correct boxplot. Mostly this was because people forgot that when using `plot(x,y)`, if you give R a continuous variable for `x` then R will think that you want to see a scatterplot. Give R a categorical variable for `x` and you will get the required boxplot. See James et al p. 50 for more on this.
+ 
+ 4. Visualising your data is an important part of understanding your data. R provides powerful tools for visualisation (see `ggplot` for one popular method), but even the `base` R plotting functions can be very good. In particular, the `plot` function can take a number of arguments which can be used to improve on the ugliness of the default settings. Among others, you should check out and become familair with:
+    i. `cex`
+    ii. `col` and `pch`
+    iii. `ylab` and `xlab`
+    iv. `main`
+    
+For example, consider the difference between:
+
+```{r}
+x <- rnorm(1000)
+y <- rnorm(1000,mean = x)
+plot(x, y)
+```
+
+and
+
+```{r}
+library(scales)
+plot(x, y, bty= "n", xlab = "Super-predictive feature", ylab = "Super-important response", main = "Super-important graph", col = alpha("red", 0.4), pch = 19)
+
+```
+
+  5. When calculating summary statistics (mean, sd, etc) for a number of different variables, you can use the `sapply` function to "loop" over the variables you are interested in:
+
+```{r, echo=FALSE}
+Auto <- read.csv("http://www-bcf.usc.edu/~gareth/ISL/Auto.csv", 
+                 header = TRUE, na.strings = "?")
+Auto <- na.omit(Auto)
+
+```
+
+Rather than:
+```{r}
+mean(Auto$cylinders)
+```
+
+```{r}
+mean(Auto$horsepower)
+```
+
+```{r}
+mean(Auto$acceleration)
+```
+
+Try:
+
+```{r}
+
+#Pulling together qualitative predictors
+qualitative_columns <- which(names(Auto) %in% c("name", "origin", "originf"))
+
+# Apply the range function to the columns of Auto data
+# that are not qualitative
+sapply(Auto[, -qualitative_columns], mean)
+
+```
+

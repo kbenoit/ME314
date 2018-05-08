@@ -1,0 +1,95 @@
+---
+title: "Common problems with lab 2"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+ 1. This was my favourite comment
+
+```{r, eval = F}
+I can't get this to work and don't understand how to combine all of the commands. This assignment is far from perfect but went much better than yesterday.  I'm learning :)
+```
+
+  2. Remember that when you modify a variable in a `data.frame` that you need to assign the modified variable back to the original objects. So, if you want to make `b` in `obj1_1` a character vector (rather than a factor):
+
+```{r}
+ obj1_1 <- read.table(text = "
+                             a  b    c    d 
+                             1  2  4.3  Yes
+                             3 4L  5.1   No
+                             ", header=T)
+
+as.character(obj1_1$b)
+str(obj1_1)
+
+```
+As you can see, the variable `b` is still a factor! You need to assign it back to `obj1_1`:
+```{r}
+
+obj1_1$b <- as.character(obj1_1$b)
+str(obj1_1)
+
+```
+
+  3. When sorting data for plotting, don't forget that you need to sort *all* relevant columns!
+
+```{r}
+library(dplyr)
+library(foreign)
+dail2002 <- read.dta("http://www.kenbenoit.net/files/dail2002.dta")
+
+spend_per_constituency <- filter(dail2002, party=="ff") %>% 
+                          group_by(constituency) %>% 
+                          summarize(median_spending = median(spend_total))
+
+head(spend_per_constituency)
+
+```
+
+Now, we want to plot the data sorted by `median_spending`. Lot's of people did this:
+
+```{r}
+
+plot(x = spend_per_constituency$constituency, y = sort(spend_per_constituency$median_spending), las = 2, cex.axis = 0.75)
+
+```
+
+What is wrong here?
+
+```{r}
+
+head(spend_per_constituency)
+
+```
+
+CarlowK should have a median spending of 19648, not 15000! You have only sorted the Y variable, not the X variable...
+
+```{r}
+
+spend_per_constituency <- spend_per_constituency[order(spend_per_constituency$median_spending),]
+
+spend_per_constituency$x <- 1:dim(spend_per_constituency)[1]
+
+plot(x = spend_per_constituency$x, y = spend_per_constituency$median_spending, xaxt = "n", bty = "n", ylab = "Median spending by constituency", xlab = "")
+axis(1, at = spend_per_constituency$x, labels = spend_per_constituency$constituency, las = 2, cex.axis = 0.75)
+```
+
+  4. I received lots of comments of the form:
+
+```{r, eval = F}
+
+I tried to use `function_name`, but I recieved `long error message`, what is going on?
+
+```
+
+  I could try and provide answers to each of these, but there are two reasons why I am not going to do that: 
+  
+        i. I am quite lazy  
+        ii. I will not be there when you go home next Friday and apply these methods to your own awesome data
+
+So, when you come accross a problem of this form, my suggestion would be to use Google/StackOverflow to find other people who have faced the same problem. If you have had a problem with `R` code, the probability that your problem is unique is almost zero. (If after searching, you really can't find an answer, try posting on SO. Although beware, SO users do not appreciate duplicate questions.)
+
+![](questions.png)

@@ -1,0 +1,37 @@
+---
+title: "Exercise 6 - Nonlinear Models and Tree-based Methods"
+author: "Ken Benoit and Slava Mikhaylov"
+output: html_document
+---
+
+Assignments for the course focus on practical aspects of the concepts covered in the lectures. Assignments are based on the material covered in James et al. You will start working on the assignment in the lab sessions after the lectures, but may need to finish them after class.
+
+Please submit your assignments via Moodle by 7pm on the day of the class. We will subsequently open up solutions to the problem sets. 
+
+
+### Exercise 6.1
+
+This question relates to the `College` dataset from the `ISLR` package.
+
+(a) Split the data into a training set and a test set. Using out-of-state tuition as the response and the other variables as the predictors, perform forward stepwise selection on the training set in order to identify a satisfactory model that uses just a subset of the predictors.
+(b) Fit a GAM on the training data, using out-of-state tuition as the response and the features selected in the previous step as the predictors. Plot the results, and explain your findings.
+(c) Evaluate the model obtained on the test set, and explain the results obtained.
+(d) For which variables, if any, is there evidence of a non-linear relationship with the response?
+
+### Exercise 6.2 
+
+Apply boosting, bagging, and random forests to a data set of your choice. Be sure to fit the models on a training set and to evaluate their performance on a test set. How accurate are the results compared to simple methods like linear or logistic regression? Which of these approaches yields the best performance?
+
+### Exercise 6.3 (Optional)
+
+We now use boosting to predict `Salary` in the `Hitters` dataset, which is part of the `ISLR` package.
+
+(a) Remove the observations for whom the salary information is unknown, and then log-transform the salaries.
+(b) Create a training set consisting of the first 200 observations, and a test set consisting of the remaining observations.
+(c) Perform boosting on the training set with 1,000 trees for a range of values of the shrinkage parameter $\lambda$. Produce a plot with different shrinkage values on the $x$-axis and the corresponding training set MSE on the $y$-axis.
+(d) Produce a plot with different shrinkage values on the $x$-axis and the corresponding test set MSE on the $y$-axis.
+(e) Compare the test MSE of boosting to the test MSE that results from applying two of the regression approaches seen in our discussions of regression models.
+(f) Which variables appear to be the most important predictors in the boosted model?
+(g) Now apply bagging to the training set. What is the test set MSE for this approach?
+
+

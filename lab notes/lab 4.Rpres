@@ -1,0 +1,172 @@
+Lab 4 review
+========================================================
+author: Jack Blumenau
+date: 19th August
+autosize: true
+
+This is my first Rstudio slide!
+========================================================
+type: section
+incremental: true
+- OK, I'm going to try and use Rstudio to create a presentation
+- How does it look so far?
+
+```{r, echo=FALSE, fig.align = "center", fig.width = 40, fig.height = 15}
+library(scales)
+par(cex=2)
+plot(rnorm(1000),rnorm(1000), bty = "n", col = alpha("blue", 0.2), pch = 19, xlab = "", ylab = "")
+```
+
+Do you actually know what your code is doing?
+========================================================
+incremental: true
+Remember this code from yesterday?
+
+```{r}
+library(ISLR)
+Weekly <- Weekly
+train <-  (Weekly$Year < 2009)
+
+train.data <- Weekly[train,]
+test.data <- Weekly[!train,]
+
+glm.fit <-  glm(Direction ~ Lag2, data = train.data, family = binomial)
+glm.probs <-  predict(glm.fit, test.data, type="response")
+glm.pred <-  rep("Down", length(glm.probs))
+glm.pred[glm.probs>.5] <-  "Up"
+
+table(glm.pred, test.data$Direction)
+
+```
+
+Lots of people managed to run the code, but I have lots of questions about what it is doing.
+
+Subsetting vectors
+========================================================
+incremental: true
+Subsetting, using the `object[]` syntax, can be done using numeric inputs **or** logical inputs
+
+```{r, echo = F}
+letters <- letters[1:5]
+```
+
+```{r}
+print(letters)
+```
+
+Let's say that I would like subset the vector `letters` to just the first, third, and fifth elements. How would I do this?
+
+One way is to use numbers to access the elements I want:
+
+```{r}
+letters[c(1,3,5)]
+```
+
+Another way would be to use a **logical** vector to subset the `letters` vector:
+
+```{r}
+
+logical.subset <- c(T, F, T, F, T)
+letters[logical.subset]
+```
+
+Back to yesterday
+========================================================
+
+```{r}
+library(ISLR)
+Weekly <- Weekly
+train <-  (Weekly$Year < 2009)
+train.data <- Weekly[train,]
+test.data <- Weekly[!train,]
+
+glm.fit <-  glm(Direction ~ Lag2, data = train.data, family = binomial)
+glm.probs <-  predict(glm.fit, test.data, type="response")
+glm.pred <-  rep("Down", length(glm.probs))
+glm.pred[glm.probs>.5] <-  "Up"
+
+table(glm.pred, test.data$Direction)
+
+```
+
+A quick note on using for-loops in R
+========================================================
+incremental: true
+Let's say that we want to print several similar statements to the console. One way to do this would be as follows:
+
+```{r}
+
+print(paste(2, "people think base R plots are better than ggplot."))
+print(paste(3, "people think base R plots are better than ggplot."))
+print(paste(4, "people think base R plots are better than ggplot."))
+print(paste(5, "people think base R plots are better than ggplot."))
+print(paste(6, "people think base R plots are better than ggplot."))
+
+```
+
+But that is pretty tedious.
+
+A quick note on using for-loops in R
+========================================================
+incremental: true
+
+An alternative is to use a for-loop.
+
+First, define the vector of values you would like to loop over:
+```{r}
+n.people <- 2:6
+print(n.people)
+```
+Then, loop over these values using an indicator:
+```{r}
+for(i in n.people){
+  print(paste(i, "people think base R plots are better than ggplot."))
+}
+```
+
+A quick note on using for-loops in R
+========================================================
+incremental: true
+
+You can also use the indicator specified in the for-loop (`i`) to subset other objects that you have created.
+
+Let's create a matrix
+```{r}
+my.matrix <- matrix(rnorm(50),10,5)
+print(my.matrix)
+```
+
+A quick note on using for-loops in R
+========================================================
+incremental: true
+
+Now let's loop over the columns of the matrix and print the sum of each column to the console:
+```{r}
+
+my.list <- list()
+for(i in 1:dim(my.matrix)[2]){
+
+  my.list[[i]] <- sum(my.matrix[,i])
+  
+}
+print(my.list)
+
+```
+
+We can do the same for the rows of the matrix:
+```{r}
+for(i in 1:dim(my.matrix)[1]){
+  print(sum(my.matrix[i,]))
+}
+
+```
+
+
+Summing up
+========================================================
+type: section
+incremental: true
+
+Slava, you are right: RStudio is pretty cool.
+
+But ggplot still sucks.

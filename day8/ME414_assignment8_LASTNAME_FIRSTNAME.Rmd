@@ -1,0 +1,287 @@
+---
+title: "Assignment 8 - Working With Textual Data"
+author: "Ken Benoit and Slava Mikhaylov"
+output: html_document
+---
+
+
+### Exercise summary
+
+This exercise is designed to get you working with [quanteda](http://github.com/kbenoit/quanteda).  The focus will be on exploring the package  and getting some texts into the **corpus** object format.  [quanteda](http://github.com/kbenoit/quanteda) package has several functions for creating a corpus of texts which we will use in this exercise.
+
+1.  Getting Started.
+
+    You will first need to install the package: 
+    ```{r, eval=FALSE}
+    install.packages("quanteda")
+    ```
+    
+1.  Exploring **quanteda** functions.
+
+    Look at the Quick Start vignette, and browse the manual for quanteda.  You can use
+    `example()` function for any 
+    function in the package, to run the examples and see how the function works.  Of course
+    you should also browse the documentation, especially `?corpus` to see the structure
+    and operations of how to construct a corpus.  The website http://quanteda.io has extensive     documentation.
+
+1.  Making a corpus and corpus structure
+
+    1.  From a vector of texts already in memory. 
+    
+        The simplest way to create a corpus is to use a vector of texts already present in 
+        R's global environment. Some text and corpus objects are built into the package,
+        for example `data_char_ukimmig2010` is the UTF-8 encoded set of 9 UK party manifesto sections from 2010, that deal with immigration policy.
+        addresses.  Try using `corpus()` on this set of texts to create a corpus.  
+      
+        Once you have constructed this corpus, use the `summary()` method to see a brief
+        description of the corpus.  The names of the corpus `data_char_ukimmig2010` should
+        have become the document names.
+      
+    1.  From a directory of text files.
+   
+        The `readtext()` function from the **readtext** package can read (almost) any set of files into an object
+        that you can then call the `corpus()` function on, to create a corpus.  (See `?readtext`
+        for an example.)
+      
+        Here you are encouraged to select any directory of plain text files of your own.  
+        How did it work?  Try using `docvars()` to assign a set of document-level variables.
+        If you do not have a set of text files to work with, then you can use the UK 2010 manifesto texts on immigration, in the Day 8 folder, like this:
+      
+        ```{r, echo=FALSE}
+        library("quanteda", quietly = TRUE, warn.conflicts = FALSE)
+        ```
+
+        ```{r, eval=FALSE}
+        require(quanteda)
+        manfiles <- textfile("https://github.com/kbenoit/ME114/raw/master/day8/UKimmigTexts.zip")
+        mycorpus <- corpus(manfiles)
+        ```
+   
+    1.  From `.csv` or `.json` files --- see the documentation for the package `readtext` (`help(package = "readtext")`).
+    
+        Here you can try one of your own examples, or just file this in your mental catalogue for future reference.
+    
+ 
+1.  Explore some phrases in the text.  
+
+    You can do this using the `kwic` (for "key-words-in-context") to explore a specific word
+    or phrase.
+      
+    ```{r}
+    kwic(data_corpus_inaugural, "terror", 3)
+    ```
+
+    Try substituting your own search terms, or working with your own corpus.
+
+1.  Create a document-feature matrix, using `dfm`.  First, read the documentation using
+    `?dfm` to see the available options.
+   
+    ```{r}
+    mydfm <- dfm(data_corpus_inaugural, remove = stopwords("english"))
+    mydfm
+    topfeatures(mydfm, 20)
+    ```
+   
+    Experiment with different `dfm` options, such as `stem = TRUE`.  The function `dfm_trim()` 
+    allows you to reduce the size of the dfm following its construction.
+   
+    Grouping on a variable is an excellent feature of `dfm()`, in fact one of my favorites.  
+    For instance, if you want to aggregate all speeches by presidential name, you can execute
+   
+    ```{r}
+    mydfm <- dfm(data_corpus_inaugural, groups = "President")
+    mydfm
+    docnames(mydfm)
+    ```
+    Note that this groups Theodore and Franklin D. Roosevelt together -- to separate them we
+    would have needed to add a firstname variable using `docvars()` and grouped on that as well.
+   
+    Do this to aggregate the Irish budget corpus (`data_corpus_irishbudget2010`) by political party, when
+    creating a dfm.
+
+1.  Explore the ability to subset a corpus.  
+
+    There is a `corpus_subset()` method defined for a corpus, which works just like R's normal
+    `subset()` command.  For instance if you want a wordcloud of just Obama's two inagural addresses, you would need
+    to subset the corpus first:
+   
+    ```{r}
+    obamadfm <- dfm(corpus_subset(data_corpus_inaugural, President=="Obama"))
+    textplot_wordcloud(obamadfm)
+    ```
+
+    Try producing that plot without the stopwords.  See `dfm_remove()` to remove stopwords from the dfm object directly, or supply
+    the `remove` argument to `dfm()`.
+
+1.  **Preparing and pre-processing texts**
+
+    1. "Cleaning"" texts
+    
+        It is common to "clean" texts before processing, usually by removing
+        punctuation,  digits, and converting to lower case. Look at the 
+        documentation for `char_tolower()` and use the
+        command on the `data_char_sampletext` text (you can load this from 
+        **quantedaData** using `data(data_char_sampletext)`. Can you think of cases 
+        where cleaning could introduce homonymy?
+        
+    1.  Tokenizing texts
+
+        In order to count word frequencies, we first need to split the text 
+        into words through a process known as *tokenization*.  Look at the
+        documentation for **quanteda**'s `tokens()` function.  Use the 
+        `tokens` command on `data_char_sampletext`, and examine the results.  Are 
+        there cases where it is unclear where the boundary between two words lies?
+        You can experiment with the options to `tokens`.  
+        
+        Try tokenizing the sentences from `data_char_sampletext` into sentences, using
+        `tokens(x, what = "sentence")`. 
+        
+    1.  Stemming.
+    
+        Stemming removes the suffixes using the Porter stemmer, found in the
+        **SnowballC** library.  The **quanteda** function* to invoke the stemmer end with  `*_wordstem`.  Apply stemming to the `data_char_sampletext` (using `char_wordstem()`) and examine the results.  Why does it not appear to work, and what do you need to do to make it work?  How would you apply this to the sentence-segmented vector?
+    
+    1.  Applying "pre-processing" to the creation of a `dfm`.
+    
+        **quanteda**'s `dfm()` function makes it wasy to pass the cleaning arguments to clean, which are executed as part of the tokenization implemented by `dfm()`.  Compare the steps required in a similar text preparation package, [**tm**](http://cran.r-project.org/package=tm):
+        
+        ```{r}
+        require(tm)
+        data("crude")
+        crude <- tm_map(crude, content_transformer(tolower))
+        crude <- tm_map(crude, removePunctuation)
+        crude <- tm_map(crude, removeNumbers)
+        crude <- tm_map(crude, stemDocument)
+        tdm <- TermDocumentMatrix(crude)
+
+        # same in quanteda
+        require(quanteda)
+        crudeCorpus <- corpus(crude)
+        crudeDfm <- dfm(crudeCorpus)
+        ```
+        
+        Inspect the dimensions of the resulting objects, including the names of the words extracted as features.  It is also worth comparing the structure of the document-feature matrixes returned by each package.  **tm** uses the [slam](http://cran.r-project.org/web/packages/slam/index.html) *simple triplet matrix* format for representing a [sparse matrix](http://en.wikipedia.org/wiki/Sparse_matrix).
+        
+        It is also -- in fact almost always -- useful to inspect the structure of this object:
+        ```{r}
+        str(tdm)
+        ```
+
+        THis indicates that we can extract the names of the words from the **tm** TermDocumentMatrix object by getting the rownames from inspecting the tdm:
+        ```{r}
+        head(tdm$dimnames$Terms, 20)
+        ```
+        Compare this to the results of the same operations from **quanteda**.  To get the "words" from a quanteda object, you can use the `features()` function:
+        ```{r}
+        features_quanteda <- features(crudeDfm)
+        head(features_quanteda, 20)
+        str(crudeDfm)
+        ```        
+        What proportion of the `crudeDfm` are zeros?  Compare the sizes of `tdm` and `crudeDfm` using the `object.size()` function.
+        
+
+1.  **Keywords-in-context**
+
+    1.  **quanteda** provides a keyword-in-context
+        function that is easily usable and configurable to explore texts
+        in a descriptive way. Type `?kwic` to view the documentation.
+
+    1.  For the Irish budget debate speeches corpus for the year 2010, called `data_corpus_irishbudget2010`,
+        experiment with the
+        `kwic` function, following the syntax specified on the help page
+        for `kwic`. `kwic` can be used either on a character vector or a
+        corpus object.  What class of object is returned?  Try assigning the
+        return value from `kwic` to a new object and then examine the
+        object by clicking on it in the environment
+        pane in RStudio (or using the inspection method of your choice).
+
+    4.  Use the `kwic` function to discover the context of the word
+        "clean".  Is this associated with environmental policy?
+
+    5.  By default, kwic explores all words related to the word, since it interprets the
+        pattern as a "regular expression".  What if we wanted to see only the literal, 
+        entire word "disaster"?  Hint: Look at the arguments using `?kwic`.
+
+1.  **Descriptive statistics**
+    
+    1.  We can extract basic descriptive statistics from a corpus from
+        its document feature matrix.  Make a dfm from the 2010 Irish budget 
+        speeches corpus.
+
+    1.  Examine the most frequent word features using `textstat_frequency()`.  What are
+        the five most frequent word in the corpus?  (Note: There is a also a `topfeatures()` command that works in a similar way.)
+
+    5.  **quanteda** provides a function to count syllables in a
+        word — `nsyllable()`. Try the function at the prompt. The
+        code below will apply this function to all the words in the
+        corpus, to give you a count of the total syllables in the
+        corpus.
+
+        ```{r}
+        # count syllables from texts in the 2010 speech corpus 
+        textsyls <- nsyllable(texts(data_corpus_irishbudget2010))
+        # sum the syllable counts 
+        sum(textsyls)                           
+        ```
+        
+        How would you get the total syllables per text?
+        
+        
+3.  **Lexical Diversity over Time**
+
+    1.  We can plot the type-token ratio of the Irish budget speeches
+        over time. To do this, begin by extracting a subset of iebudgets
+        that contains only the first speaker from each year:
+
+        ```{r}
+        data(data_corpus_irishbudgets, package = "quantedaData")
+        finMins <- corpus_subset(data_corpus_irishbudgets, number == "01")
+        tokeninfo <- summary(finMins)
+        ```
+        
+        Note the quotation marks around the value for `number`.  Why are these required here?
+
+    2.  Get the type-token ratio for each text from this subset, and
+        plot the resulting vector of TTRs as a function of the year.  Hint: See `?textstat_lexdiv`.        
+
+4.  **Document and word associations**
+
+    1.  Load the presidential inauguration corpus selecting from 1900-1950,
+        and create a dfm from this corpus.
+
+    2.  Measure the term similarities for the following words: *economy*, *health*,
+        *women*.
+        
+
+1.  **Working with dictionaries**
+
+    1.  **Creating a simple dictionary.**
+    
+        Dictionaries are named lists, consisting of a "key" and a set of entries defining
+        the equivalence class for the given key.  To create a simple dictionary of parts of
+        speech, for instance we could define a dictionary consisting of articles and conjunctions,
+        using:
+        ```{r}
+        posDict <- dictionary(list(articles = c("the", "a", "and"),
+                                   conjunctions = c("and", "but", "or", "nor", "for", "yet", "so")))
+        ```
+        
+        To let this define a set of features, we can use this dictionary when we create a `dfm`, 
+        for instance:
+        ```{r}
+        posDfm <- dfm(data_corpus_inaugural, dictionary = posDict)
+        posDfm[1:10,]
+        ```
+        
+        Weight the `posDfm` by term frequency using `dfm_weight()`, and plot the values of articles
+        and conjunctions (actually, here just the coordinating conjunctions) across the speeches.
+        (**Hint:** you can use `docvars(data_corpus_inaugural, "Year"))` for the *x*-axis.)
+        
+        Is the distribution of normalized articles and conjunctions relatively constant across
+        years, as you would expect?
+
+1.  Settle a Scrabble word value dispute.
+
+    Look up the Scrabble values of "aerie" and "queue".  And ask yourself how can an English word have five letters and just one consonant?? It's downright **eerie**.
+    
+    Hint:  The function is `nscrabble()`.

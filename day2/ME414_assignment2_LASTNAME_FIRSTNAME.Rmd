@@ -1,0 +1,92 @@
+---
+title: "Exercise 2 - Working with Data"
+author: "Ken Benoit and Slava Mikhaylov"
+output: html_document
+---
+
+### Exercise summary
+
+This exercise is designed to get you working with data in R, and to increase your familiarity with some of the concepts from Day 2. 
+
+Please submit your assignments via Moodle by 7pm on the day of the class. We will subsequently open up solutions to the problem sets.
+
+The focus will be on exploring some of the data structures in R and on implementing some of the data restructuring from the `dplyr` and the `reshape2` packages.
+
+1.  Working with data structures in R
+
+    a.  Execute and example the following object:
+        ```{r}
+        obj1_1 <- read.table(text = "
+                             a  b    c    d 
+                             1  2  4.3  Yes
+                             3 4L  5.1   No
+                             ")
+         ```
+        Was this what you were expecting?  Why not?
+        
+
+    b.  Modify the above command and rerun it with the `header=TRUE` argument, assigning
+        the result to a new object `obj2_1`.
+        Examine the object's structure using `str(obj2_1)`.  Was this what you were expecting?
+        Try correcting the input by specifying a `stringsAsFactors` argument to `read.table`.
+        
+        ```{r}
+        obj2_1 <- read.table(text = "
+                             a  b    c    d 
+                             1  2  4.3  Yes
+                             3 4L  5.1   No
+                             ", header=TRUE)
+         ```
+
+
+    c.  Modify the object so that:
+        *  `b` is integer
+        *  `d` is *not* a factor
+        
+
+    d.  Did you have trouble getting `b` to coerce to an integer, try first removing the "L"
+        using `gsub()` to replace the `"L"` with `""`.  Get help on this using `?gsub`.
+        
+
+    e.  Finally, make this object into a data.frame, using `data.frame`.  Print the output.  Does it look correct?
+    
+
+2.  Working with the `dplyr` package
+
+    For this part and the next, you should work with the file `dail2002.dta` from the article Kenneth Benoit and Michael Marsh. 2008. "[The Campaign Value of Incumbency: A New Solution to the Puzzle of Less Effective Incumbent Spending.](http://www.kenbenoit.net/pdfs/ajps_348.pdf)" *American Journal of Political Science* 52(4, October): 874-890.   
+    
+    a.  Load the Stata dataset used in this paper, available [here](http://www.kenbenoit.net/files/dail2002.dta).  To load this into R, you will need the `read.dta` command from the `foreign` package.  (Note that you can load straight from the URL using this command.)  Call this data object `dail2002`.  What sort of object is this?  How can you tell what sort of object it is?
+    
+        ```{r}
+        require(foreign)
+        dail2002 <- read.dta("http://www.kenbenoit.net/files/dail2002.dta")
+        ```
+    
+    b.  Filtering:  Select only the Fianna Fail candidates using `filter()`, and assign the filtered `data.frame` to `dail2002FF`.  Note that you might want to first find out what are the labels for party by using `summary()` on the `party` variable.
+    
+        ```{r}
+        require(dplyr)
+        dail2002FF <- filter(dail2002, party=="ff")
+        summary(dail2002FF$party)
+        ```
+        How many FF candidates were there in the 2002 election?
+        
+    
+        
+    c.  Summarizing FF candidates per constituency.  On the new data frame `dail2002FF`, summarize the median spending (`spend_total`) for FF candidates using the `dplyr` function `summarise`.  Use "pipes" for extra credit!
+        
+        Sort and plot the 42 median spending values using an index plot. 
+
+        For extra credit, do the same using `aggregate` instead of dplyr.
+
+
+
+3.  Working with the `reshape2` package
+    
+    The `count2 - count16` variables are currently in "wide" format.  Use `melt` to create a candidate-count unit dataset, and then produce a table of the 42 constituencies by their maximum count.
+    
+    Hint: First rename the votes1st variable to `count1`, so that it will be consistent with the others.
+    Then `melt` the data using `reshape2`, creating a new variable called `count` for the new value.  Then `filter` to remove any count variable that is zero.  Then `group_by` constituency, and `summarise` a count using `n()`. 
+    
+    You will probably need to consult both the package vignettes and the help pages to accomplish this.  It seems complicated but it's well worth the effort to master these reshaping and summarizing skills -- this sort of manipulation and summary of the data is a core part of the activities of data mining and data analysis.
+

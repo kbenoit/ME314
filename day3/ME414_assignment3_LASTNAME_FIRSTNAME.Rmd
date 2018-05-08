@@ -1,0 +1,87 @@
+---
+title: "Exercise 3 - Linear Regression"
+author: "Ken Benoit and Slava Mikhaylov"
+output: html_document
+---
+
+Assignments for the course focus on practical aspects of the concepts covered in the lectures. Assignments are based on the material covered in James et al. You will start working on the assignment in the lab sessions after the lectures, but may need to finish them after class.
+
+Please submit your assignments via Moodle by 7pm on the day of the class. We will subsequently open up solutions to the problem sets.
+
+
+You will need to load the package from the course textbook:
+```{r}
+library(ISLR)
+```
+
+
+## Exercise 3.1
+
+This question involves the use of multiple linear regression on the `Auto` data set.
+
+(a) Produce a scatterplot matrix which includes all of the variables in the data set.
+
+(b) Compute the matrix of correlations between the variables using the function `cor()`. You will need to exclude the `name` variable, which is qualitative.
+
+(c) Use the `lm()` function to perform a multiple linear regression with `mpg` as the response and all other variables except `name` as the predictors. Use the `summary()` function to print the results. Comment on the output. For instance:
+
+    i. Is there a relationship between the predictors and the response?
+    ii. Which predictors appear to have a statistically significant relationship to the response?
+    iii. What does the coefficient for the `year` variable suggest?  
+  
+(d) Use the `plot()` function to produce diagnostic plots of the linear regression fit. Comment on any problems you see with the fit. Do the residual plots suggest any unusually large outliers? Does the leverage plot identify any observations with unusually high leverage?
+
+(e) Use the `*` and `:` symbols to fit linear regression models with interaction effects. Do any interactions appear to be statistically significant?
+
+(f) Try a few different transformations of the variables, such as $log(X)$, $\sqrt{X}$, $X^2$. Comment on your findings.
+
+
+## Exercise 3.2
+
+This question should be answered using the `Carseats` dataset from the `ISLR` package.
+
+(a) Fit a multiple regression model to predict `Sales` using `Price`,
+`Urban`, and `US`.
+
+(b) Provide an interpretation of each coefficient in the model. Be
+careful -- some of the variables in the model are qualitative!
+
+(c) Write out the model in equation form, being careful to handle the qualitative variables properly.
+
+(d) For which of the predictors can you reject the null hypothesis $H_0 : \beta_j =0$?
+
+(e) On the basis of your response to the previous question, fit a smaller model that only uses the predictors for which there is evidence of association with the outcome.
+
+(f) How well do the models in (a) and (e) fit the data?
+
+(g) Using the model from (e), obtain 95% confidence intervals for the coefficient(s).
+
+(h) Is there evidence of outliers or high leverage observations in the model from (e)?
+
+
+## Exercise 3.3 (Optional)
+
+In this exercise you will create some simulated data and will fit simple linear regression models to it. Make sure to use `set.seed(1)` prior to starting part (a) to ensure consistent results.
+
+(a) Using the `rnorm()` function, create a vector, `x`, containing 100 observations drawn from a $N(0,1)$ distribution. This represents a feature, `X`.
+
+(b) Using the `rnorm()` function, create a vector, `eps`, containing 100 observations drawn from a $N(0,0.25)$ distribution i.e. a normal distribution with mean zero and variance 0.25.
+
+(c) Using `x` and `eps`, generate a vector `y` according to the model
+$$Y = -1 + 0.5X + \epsilon$$
+What is the length of the vector `y`? What are the values of $\beta_0$ and $\beta_1$ in this linear model?
+
+(d) Create a scatterplot displaying the relationship between `x` and `y`. Comment on what you observe.
+
+(e) Fit a least squares linear model to predict `y` using `x`. Comment on the model obtained. How do $\hat{\beta}_0$ and $\hat{\beta}_1$ compare to $\beta_0$ and $\beta_1$?
+
+(f) Display the least squares line on the scatterplot obtained in (d). Draw the population regression line on the plot, in a different color. Use the `legend()` command to create an appropriate legend.
+
+(g) Now fit a polynomial regression model that predicts $y$ using $x$ and $x^2$. Is there evidence that the quadratic term improves the model fit? Explain your answer.
+
+(h) Repeat (a)-(f) after modifying the data generation process in such a way that there is less noise in the data. The model should remain the same. You can do this by decreasing the variance of the normal distribution used to generate the error term $\epsilon$ in (b). Describe your results.
+
+(i) Repeat (a)-(f) after modifying the data generation process in such a way that there is more noise in the data. The model should remain the same. You can do this by increasing the variance of the normal distribution used to generate the error term $\epsilon$ in (b). Describe your results.
+
+(j) What are the confidence intervals for $\beta_0$ and $\beta_1$ based on the original data set, the noisier data set, and the less noisy data set? Comment on your results.
+

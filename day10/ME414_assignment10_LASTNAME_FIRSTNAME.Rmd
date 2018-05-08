@@ -1,0 +1,65 @@
+---
+title: "Exercise 10 - Mining Social Media"
+author: "Ken Benoit and Slava Mikhaylov"
+output: html_document
+---
+
+In this exercise, we will work with social media, including Facebook and Twitter.
+
+Note that in order to obtain the authentication tokens, you will need to have a Facebook and Twitter account.  If you don't wish to sign up for these, I suggest you work with another student.  (This is one of the reasons why this assignment will not be marked -- I did not want to force anyone to sign up for a social media account they did not want!)
+   
+1.  Extracting Facebook data.
+
+    a.  Navigate to https://developers.facebook.com/tools/explorer/ and perform the necessary steps to obtain an Access Token.  This will be required to access Facebook data.
+    
+    b.  Install the package **Rfacebook**, and famliarize yourself with the `getPage()` function. 
+    
+    c.  Use `getPage()` to get the last 50 posts from a public Facebook page of your choice.  Put these results into a corpus, and summarize the corpus.  Describe the meta-data, which you should have put into the corpus using the `docvars = ` argument (or assigning them in a second step using `docvars(myFBcorpus) <- thedocvarsDataFame`.
+
+    d.  Plot a word cloud, after removing stopwords that you think appropriate.  Tweak the settings (see `?wordcloud::wordcloud`) to make it look nicer than the default.  How informative is this?
+
+2.  Working with the Twitter REST API
+
+    a.  The authentication for the REST API uses the four keys that you
+        got after completing the application form on the twitter
+        developers page at http://apps.twitter.com.  The function `setup_twitter_oauth` from the **twitteR** package for this, to connect your R session to the Twitter REST API.
+
+        ```{r, eval = FALSE}
+        require(twitteR)
+        setup_twitter_oauth(consumer_key = "",
+                            consumer_secret ="",
+                            access_token = "",
+                            access_secret = "")
+        ```
+
+    b.  Perform a simple searchin using `searchTwitter()`.  Look at the documentation: `help(package=twitteR)` to better understand this function. 
+
+        ```{r, eval = FALSE}
+        results <- searchTwitter("your search term here"", n=50)
+        # transform the results object into a data frame for inspection
+        df <- twListToDF(results)
+        ```
+
+    c.  Save the results of the search to a corpus, create a dfm, remove features you think need removing, and plot a word cloud.  This might involve you repeating the steps once you fine-tune the set of features to exclude.
+    
+    d.  Look up information about one of the users from the screen names
+        in the results dataframe.  This can be done using the `getUser()` function.
+
+        ```{r, eval = FALSE}
+        # get information about a user
+        user <- getUser(df$screenName[1])  # the user from the first Tweet above
+        # now transform this into a form you can inspect
+        ```
+
+3.  Accessing the Twitter streaming API using the **streamR** package.   
+
+    Here it's been about a year since I last used that package, so we will figure this out together in the lab.  As social media and their APIs and the packages needed to access them is constantly changing, this will be a good exercise in itself as to how to work with social media and R.
+
+    a.  Full instructions for authenticating, searching, and mapping
+        using the streaming API are available on the developer’s (Pablo Barbera)
+        website: https://github.com/pablobarbera/streamR.
+        
+    b.  Use this to capture some real-time Tweets about any topic, after opening the capture window for 30 seconds.
+    
+    c.  Put these results into a corpus, and analyze using a wordcloud or any other method you wish (e.g. `topfeatures()`, `kwic()`, etc.)
+

@@ -1,0 +1,75 @@
+---
+title: "Common problems with lab 3"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Generally, yesterday's homework was excellent! Well done! Some small things:
+
+ 1. When interpreting regression coefficients, there were some common errors:
+    i. Failing to specify the unit of the independent variable (i.e. "an increase in price is associated with a 0.05 reduction in sales" or "a unit increase in year")
+    ii. Failing to mention that other variables are held constant.
+    iii. Failing to discuss significance (or reporting on insignificant coefficients)
+ 2. Interpreting `R^2` can be tricky - is explaining .25 of the variation in the dependent variable good? Or bad? The absolute value is difficult to assess, but it can be useful in comparing the fit **accross** different models. 
+ 3. Some people put an awful lot of work into calculating the confidence intervals of a regression line by hand. There is a simple way!
+
+```{r, eval=TRUE}
+x <- 1:100
+y <- rnorm(100, mean = x, sd = 10)
+model <- lm(y ~ x)
+confint(model, level = 0.95)
+```
+
+ 4. When specifying a regression model, it is normally useful to make use of the `data = x` argument. So, rather than:
+ 
+```{r, eval=FALSE}
+lm(Auto$mpg ~ Auto$cylinders + Auto$horsepower + Auto$year)
+```
+
+You can instead have:
+
+```{r, eval=FALSE}
+lm(mpg ~ cylinders + horsepower + year, data = Auto)
+```
+
+  5. Get to know and love the `par()` function and the `legend()` function.
+
+```{r}
+w  <- rnorm(1000)
+x  <- rnorm(1000)
+y  <- rnorm(1000)
+z  <- rnorm(1000)
+
+par(mfrow = c(2,2), col = "blue", pch = 19, cex = 0.5, bty="n")
+plot(x, z)
+legend("bottomright", legend = "Awesome data", pch = 19)
+plot(y, z)
+legend("bottomleft", legend = "Awesome data", pch = 19)
+plot(x, y)
+legend("topright", legend = "Awesome data", pch = 19)
+plot(w, x)
+legend("topleft", legend = "Awesome data", pch = 19)
+
+```
+
+ 6. For today's lab you will need to get to grips with the `predict` function. This is a generic function which can be applied post-estimation to a number of different model objects to produce fitted values. For instance:
+ 
+```{r, eval=TRUE}
+x <- rnorm(1000)
+y <- rnorm(1000, mean = x, sd = 1)
+model <- lm(y ~ x)
+y_hat <- predict(model)
+library(scales)
+plot(x, y, pch = 19, col = alpha("grey", 0.4), cex = .5)
+points(x, y_hat, pch = 19, cex = .25)
+
+```
+
+For producing the fitted *probabilities* for a non-linear model, you will need to modify the `type` argument.
+
+ 7. Now you are getting to grips with `R`, you could all try and make your code a little more legible. Try using comments which can be included by prefacing with `#`. Also, try giving the objects you create sensible names (i.e. `linear.regression` rather than `obj16`)...
+ 
+ ![](code.png)

@@ -1,0 +1,116 @@
+---
+title: "Exercise 9 - Topic Models"
+author: "Jack Blumenau, Ken Benoit & Slava Mikhaylov"
+output: html_document
+---
+
+You will need to load the following libraries (you may also want to set the random number seed to make everything replicable):
+```{r, eval=T, message = F}
+library(quanteda)
+library(topicmodels)
+library(LDAvis)
+library(stm)
+library(knitr)
+set.seed(221186)
+```
+
+## Exercise 9.1
+
+In this question we are going to use topic modelling to understand how parliamentary speech varies by the gender of the MP. We will be working with a corpus of speeches made by legislators in the UK House of Commons in the 2014 calandar year. 
+
+You will need to make sure that the file `hoc_speeches.Rdata` is in your current working directory, and then use the following command to read this data into `R`.
+
+
+```{r, message = FALSE}
+
+load("hoc_speeches.Rdata")
+
+```
+ 
+ (a) Inspect the `data.frame` object `speeches` and produce some summary statistics.
+ (b) Use the functions in the `quanteda` package to turn this data into a `corpus` object. Attach the relevant metadata as `docvars`.
+ (c) Turn this corpus into a document-feature matrix. You will need to do some pre-processing if you don't want to wait days for your topic model to coverge. Think about some of the following:
+ 
+    (i) Unigrams? 
+    (ii) Stopwords?
+    (iii) Stemming?
+    (iv) Very infrequent words?
+    
+(If you get stuck, refer to yesterday's problem set for some tips.)
+
+ (c) Run a structural topic model (STM) for this corpus, using the `gender` variable in the topic prevalence argument. Use the `stm` function to do this (remember to convert your `dfm` for use with the stm package). Set the `seed` argument to `stm` to be equal to `123`. Be aware, this takes about 15 minutes to run on Jack's laptop -- for testing purposes you might want to set the maximum iterations for the stm to be some low number (`max.em.its = 10` for instance).
+
+    (i) First, convert the `speechDFM` to the `stm` format using Ken's cool `convert` function.
+
+    (ii) Now specify and estimate the `stm` model:
+
+    (iii) Use the `plot` function on your estimated `stm` object to see the top topic words with their corpus frequency
+
+    (iv) Examine the top words from each topic using `labelTopics`
+
+    (v) Find the top three documents associated with each topic. Do these make sense given the words you have used to describe that topic? (Hint: in the estimated `stm` object, the document-topic probabilities are stored in `theta`) Report the top speeches for one selected topic.
+
+    (vi) Use the `estimateEffect` and `plot.estimateEffect` functions in the `stm` package to estimate the effect of MP gender on topic usage. On which topics are women, on average, more active? 
+
+(If you get stuck on this question, there is some example code in Jack's lecture notes. Also, the `stm` documentation is very good!)
+
+## Exercise 9.2
+
+**movies corpus**.  Here we will use the very impressive `LDAvis` library in conjunction with the `lda::lda.collapsed.gibbs.sampler()` function from the `lda` package. The following code is used to demonstate how the parliamentary speeches interactive visualisation example was created for in the lecture. Your task is to implement this for the `movies` corpus.
+
+First we construct the relevant `dfm` and estimate the `lda` model.
+```{r, eval=FALSE}
+## Create a corpus of speeches
+speechCorpus <- corpus(speeches$Speech)
+
+## Convert to dfm, removing some words that appear very regularly
+speechDfm <- dfm(speechCorpus, ignoredFeatures = c(stopwords("SMART"),stopwords("english"), "will", "hon", "right","people","government","can","friend","house","gentleman","said", "interruption", "prime", "minister", "secretary", "state"), stem = F)
+
+## Trim some rarely occuring words
+speechDfm <- trim(speechDfm, minCount = 15, minDoc = .0015)
+
+# Convert to lda format
+speechDfmlda <- convert(speechDfm, to = "lda")
+
+# MCMC and model tuning parameters:
+K <- 30 # Number of topics
+G <- 2000 # Number of iterations
+alpha <- 0.02 # Prior for topic proportions
+eta <- 0.02 # Prior for topic distributions
+
+# Fit the model
+t1 <- Sys.time() # Start timer
+
+fit <- lda.collapsed.gibbs.sampler(documents = speechDfmlda$documents, K = K, 
+                                       vocab = speechDfmlda$vocab, 
+                                      num.iterations = G, alpha = alpha, 
+                                     eta = eta, initial = NULL, burnin = 0,
+                                      compute.log.likelihood = TRUE)
+        t2 <- Sys.time() # End timer
+        t2 - t1  # about 15 minutes on Jack's MacBook Pro
+```
+
+Now we plot the model using `LDAvis`.
+
+```{r, eval=FALSE}
+library(LDAvis)
+# create the JSON object to feed the visualization:
+json <- createJSON(phi = t(apply(t(fit$topics) + eta, 2, function(x) x/sum(x))), 
+                   theta = t(apply(fit$document_sums + alpha, 2, function(x) x/sum(x))), 
+                   doc.length = ntoken(speechDfm), 
+                   vocab = features(speechDfm), 
+                   term.frequency = colSums(speechDfm))
+        serVis(json, out.dir = "exampleVis", open.browser = TRUE)
+```
+
+  a.  You will need to load the data from the `quanteda` package: 
+    
+```{r}
+
+data(movies, package = "quantedaData")
+```
+    
+  b.  Adapt the code above to produce an interactive visualisation of the `movies` corpus. 
+    
+  c.  Describe a few topics as you see them.  Is there a "scary movie" topic?  Is there a "science fiction" topic?  Figure out how to convert the interactive plot into a static figure, and include these in your answer.
+    

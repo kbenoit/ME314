@@ -1,0 +1,75 @@
+Lab 5 review
+========================================================
+author: Jack Blumenau
+date: 19th August
+autosize: true
+
+My favourite comment from last week
+========================================================
+![](funny.png)
+
+Loops and apply functions
+========================================================
+incremental: true
+Let's say that we want to loop over the rows of a matrix, and calculate the sum of each row.
+
+```{r}
+
+my.matrix <- matrix(rnorm(50),10,5)
+print(my.matrix)
+
+```
+
+
+Loops and apply functions
+========================================================
+incremental: true
+How would we do this using a for-loop?
+
+```{r}
+sum.store.loop <- vector()
+for(i in 1:dim(my.matrix)[1]){
+  sum.store.loop[i] <- sum(my.matrix[i,])
+}
+
+print(sum.store.loop)
+
+```
+
+This is pretty laborious.
+
+Loops and apply functions
+========================================================
+incremental: true
+An alternative to this is using the `apply` function, which loops over the margins of an array or matrix and applies a user-specified function to each row/column:
+
+```{r}
+
+  sum.store.apply <- apply(my.matrix, 1, sum)
+print(sum.store.loop==sum.store.apply)
+
+```
+
+This is much less laborious. You could also look at the details for:
+  * `lapply` -- apply a function over a list, return another list
+  * `sapply` -- apply a function over a list, return a vector or matrix
+
+(Note that for the simple example of summing, we could just use `rowSums` and `colSums`.)
+
+Topic model validation
+========================================================
+incremental: true
+
+In Thurdsay's lecture we will discuss probabilistic topic models. As we will see in class, validating the output of topic models is both crucial and difficult.
+
+For this I would like your help!
+
+Please go to this webaddress and follow the instructions: 
+
+https://jblumenau.shinyapps.io/topicapp/
+
+We will discuss the results of this on Thursday. Thanks!
+
+(I will also email you this link...)
+
+

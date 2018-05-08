@@ -1,0 +1,63 @@
+---
+title: "Exercise 5 - Resampling Methods and Model Selection"
+author: "Ken Benoit and Slava Mikhaylov"
+output: html_document
+---
+
+Assignments for the course focus on practical aspects of the concepts covered in the lectures. Assignments are based on the material covered in James et al. You will start working on the assignment in the lab sessions after the lectures, but may need to finish them after class.
+
+Please submit your assignments via Moodle by 7pm on the day of the class. We will subsequently open up solutions to the problem sets. 
+
+
+You will need to load the core library for the course textbook:
+```{r}
+library(ISLR)
+```
+
+
+## Exercise 5.1
+
+In the lab session for this topic (Sections 5.3.2 and 5.3.3 in James et al.), we saw that the `cv.glm()` function can be used in order to compute the LOOCV test error estimate. Alternatively, one could compute those quantities using just the `glm()` and `predict.glm()` functions, and a `for` loop. You will now take this approach in order to compute the LOOCV error for a simple logistic regression model on the `Weekly` data set. Recall that in the context of classification problems, the LOOCV error is given in Section 5.1.5 (5.4, page 184).
+
+
+ (a) Fit a logistic regression model that predicts `Direction` using `Lag1` and `Lag2`.
+
+ (b) Fit a logistic regression model that predicts `Direction` using `Lag1` and `Lag2` using *all but the first observation*.
+
+ (c) Use the model from (b) to predict the direction of the first observation. You can do this by predicting that the first observation will go up if `P(Direction="Up"|Lag1, Lag2) > 0.5`. Was this observation correctly classified?
+
+ (d) Write a `for` loop from i=1 to i=n, where n is the number of observations in the data set, that performs each of the following steps:
+
+    i. Fit a logistic regression model using all but the i-th observation to predict `Direction` using `Lag1` and `Lag2`.
+    
+    ii. Compute the posterior probability of the market moving up for the i-th observation. 
+    
+    iii. Use the posterior probability for the i-th observation in order to predict whether or not the market moves up. 
+    
+    iv. Determine whether or not an error was made in predicting the direction for the i-th observation. If an error was made, then indicate this as a 1, and otherwise indicate it as a 0.
+
+ (e) Take the average of the n numbers obtained in (d)iv in order to obtain the LOOCV estimate for the test error. Comment on the results.
+
+
+## Exercise 5.2
+
+In this exercise, we will predict the number of applications received using the other variables in the `College` data set.
+
+(a) Split the data set into a training set and a test set.
+(b) Fit a linear model using least squares on the training set, and
+report the test error obtained.
+(c) Fit a ridge regression model on the training set, with $\lambda$ chosen by cross-validation. Report the test error obtained.
+(d) Fit a lasso model on the training set, with $\lambda$ chosen by cross-validation. Report the test error obtained, along with the number of non-zero coefficient estimates.
+(e) Fit a PCR model on the training set, with $M$ chosen by cross-validation. Report the test error obtained, along with the value of $M$ selected by cross-validation.
+(f) Fit a PLS model on the training set, with $M$ chosen by cross-validation. Report the test error obtained, along with the value of $M$ selected by cross-validation.
+(g) Comment on the results obtained. How accurately can we predict the number of college applications received? Is there much difference among the test errors resulting from these five approaches?
+
+
+## Exercise 5.3 (Optional)
+
+We will now try to predict per capita crime rate in the `Boston` data set.
+
+(a) Try out some of the regression methods explored this week, such as best subset selection, the lasso, ridge regression, and PCR. Present and discuss results for the approaches that you consider.
+(b) Propose a model (or set of models) that seem to perform well on this data set, and justify your answer. Make sure that you are evaluating model performance using validation set error, cross-validation, or some other reasonable alternative, as opposed to using training error.
+(c) Does your chosen model involve all of the features in the data set? Why or why not?
+
