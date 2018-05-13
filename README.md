@@ -308,6 +308,7 @@ Working with text in R, sentiment analysis, dictionary methods.
 ***
 
 #### __*Monday, 13 August: Topic modelling [JB]*__
+Latent Dirichlet Allocation, Correlated Topic Model, Structural Topic Model
 
 ##### Resources
 
@@ -361,9 +362,18 @@ Working with the Twitter API, Facebook API, JSON data, and examples.
 * Zafarani et al., Chapters 1-4.
 * Matthew Russell (2013). _Mining the Social Web_. O'Reilly Media. 2nd edition.
 
+***
 
 #### __*Wednesday, 15 August: Network Analysis*__
+Working with network data, network data types, centrality measures
 
+##### Required reading:
+* Miller McPherson, Lynn Smith-Lovin, and James M Cook. 2001. "Birds of a Feather: Homophily in Social Networks" _Annual Review of Sociology_ 27, 415-44
+
+##### Recommended Reading:
+* [Using Metadata to Find Paul Revere](https://kieranhealy.org/blog/archives/2013/06/09/using-metadata-to-find-paul-revere/)
+
+***
 
 #### __*Thursday, 16 August: TBC*__
 
