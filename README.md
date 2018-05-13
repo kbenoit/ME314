@@ -5,7 +5,7 @@
 
 [Kenneth Benoit](kbenoit@lse.ac.uk), Department of Methodology, LSE  
 [Slava Mikhaylov](s.mikhaylov@essex.ac.uk), Institute for Analytics and Data Science, University of Essex  
-[Jack Blumenau](J.Blumenau@lse.ac.uk), Department of Political Science, UCL
+[Jack Blumenau](J.Blumenau@ucl.ac.uk), Department of Political Science, UCL
 
 This repository contains the class materials for the [Research Methods, Data Science, and Mathematics](https://www.lse.ac.uk/study-at-lse/Summer-Schools/Summer-School/Courses/Secure/Research-Methods-Data-Science-and-Mathematics) course [*ME314 Introduction to Data Science and Big Data Analytics*](https://www.lse.ac.uk/study-at-lse/Summer-Schools/Summer-School/Courses/Secure/Research-Methods-Data-Science-and-Mathematics/ME314) taught in July-August 2018 by Kenneth Benoit, Slava Mikhaylov, and Jack Blumenau.  
 
@@ -362,7 +362,7 @@ Working with the Twitter API, Facebook API, JSON data, and examples.
 * Matthew Russell (2013). _Mining the Social Web_. O'Reilly Media. 2nd edition.
 
 
-#### __*Wednesday, 15 August: TBC*__
+#### __*Wednesday, 15 August: Network Analysis*__
 
 
 #### __*Thursday, 16 August: TBC*__
