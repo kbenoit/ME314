@@ -372,6 +372,7 @@ Working with network data, network data types, centrality measures
 
 ##### Recommended Reading:
 * [Using Metadata to Find Paul Revere](https://kieranhealy.org/blog/archives/2013/06/09/using-metadata-to-find-paul-revere/)
+* G. Erkan and D. Radev. 2004. "LexRank: Graph-based lexical centrality as salience in text summarization" _Journal of Artificial Intelligence Research_ 22, 457 - 479
 
 ***
 
