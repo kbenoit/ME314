@@ -213,7 +213,7 @@ We will return to database normalization, and how to implement this using good p
 * [SQLite documentation](https://www.sqlite.org/docs.html).
 *   Bassett, L. 2015.  [_Introduction to JavaScript Object Notation: A to-the-point Guide to JSON_](http://shop.oreilly.com/product/0636920041597.do).  O'Reilly Media, Inc.
 
-
+***
 
 #### __*Thursday, 2 August: Linear Regression [KB]*__
 
