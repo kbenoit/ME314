@@ -48,7 +48,7 @@ Before the course you should:
 
 * Download and install [R](https://cran.r-project.org) _and_ [RStudio](http://www.rstudio.com) on your computer.
 
-The following links provide a basic introduction to R:
+If you are not already familiar with R, we strongly encourage you to attempt to become familiar before the start of the course.  That way, you will spend much less time become familiar with the tools, and be able to focus more on the methods.  The following links provide a basic introduction to R, which you can study at your own pace before the course begins.
 
 * [*An Introduction to R*](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf).
 * Data Camp [R tutorials](https://www.datacamp.com/courses/free-introduction-to-r).
@@ -150,7 +150,7 @@ We will use this session to get to know the range of interests and experience st
 
 <!--- * [The results of the data science quiz](http://htmlpreview.github.com/?https://github.com/kbenoit/ME414/blob/master/day1/data_science_quiz.html) and the [anonymized dataset in .csv format](day1/data_science_quiz_results.csv). -->
 
-##### Required reading:
+##### Required reading
 
 * James et al (2013), Chapters 1--2. Note: The book is available from the authors' page [here](http://www-bcf.usc.edu/~gareth/ISL/).
 * [*An Introduction to R*](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf).
@@ -161,44 +161,69 @@ We will use this session to get to know the range of interests and experience st
 * Garrett Grolemund and Hadley Wickham (2016) _R for Data Science_, O'Reilly Media, Chapters 1-3. Note: Online version is available from the authors' page [here](http://r4ds.had.co.nz/index.html).
 
 
-##### Recommended Reading:
+##### Recommended Reading
 
 * Patrick Burns, 2011. _The R Inferno_.  Available [here](http://www.burns-stat.com/pages/Tutor/R_inferno.pdf).
 * Lantz, Ch. 2.
 
 ***
 
-#### __*Tuesday, 31 July: Data structures and databases [KB]*__  
-Data types and formats, record cleaning, linkage, SQL, JSON, massive data processing.
+#### __*Tuesday, 31 July: The Shape of Data [KB]*__
+
+This week introduces the concept of data "beyond the spreadsheet", the rectangular format most common in statistical datasets.  It covers relational structures and the concept of database normalization.  We will also cover ways to restructure data from "wide" to "long" format, within strictly rectangular data structures.  Additional topics concerning text encoding, date formats, and sparse matrix formats are also covered.
+
 
 ##### Resources
 
-* [Lecture Notes](day2/ME414_day2.pdf)
+* [Lecture Notes](day2/)
 * [Assignment 2 as R markdown](day2/ME414_assignment2_LASTNAME_FIRSTNAME.Rmd)
 * Assignment 2 **solution** as [R markdown](day2/ME414_assignment2_solution.Rmd)
 * [Altaf's resource on **dplyr** and the "tidyverse"](https://altaf-ali.github.io/tidydata_tutorial)
 * [Altaf's resource on **ggplot2**](https://altaf-ali.github.io/ggplot_tutorial)
 
-##### Required reading:
-* Grolemund and Wickham, Chapters 4, 8-10.
-* Lantz, Chapters 2, 12.
-* Zumel and Mount, Chapters 2-4.
+##### Required reading
+
+* Wickham, Hadley and Garett Grolemund.  2017.  _R for Data Science: Import, Tidy, Transform, Visualize, and Model Data_.  Sebastopol, CA: O'Reilly.  [Part II Wrangle](http://r4ds.had.co.nz/wrangle-intro.html), [Tibbles](http://r4ds.had.co.nz/tibbles.html), [Data Import](http://r4ds.had.co.nz/data-import.html), [Tidy Data](http://r4ds.had.co.nz/tidy-data.html) (Ch. 7-9 of the print edition).
 
 
-##### Recommended Reading:
-* Leskovec et al., Chapters 1-3.
-* Kromer, Philip and Russell Jurney (2016). _Big Data for Chimps_. O'Reilly Media. Chapters 1-2, 5-9.
+##### Recommended Reading
 
-***
+* Reshaping data in Python: "[Reshaping and Pivot Tables](https://pandas.pydata.org/pandas-docs/stable/reshaping.html)".
+* Robin Linderborg, "[Reshaping Data in Python](https://hackernoon.com/reshaping-data-in-python-fa27dda2ff77)", 20 Jan 2017.
 
-#### __*Wednesday, 1 August: Linear Regression [KB]*__
+
+
+#### __*Wednesday, 1 August: Working with Databases [KB*__]
+
+We will return to database normalization, and how to implement this using good practice in a relational database manager, SQLite.  We will cover how to structure data, verify data types, set conditions for data integrity, and perform complex queries to extract data from the database.  We will also cover authentication and how to connect to local and remote databases.   
+
+##### Resources
+
+* [Lecture Notes](day3/)
+* [Assignment 3 as R markdown](day3/ME414_assignment3_LASTNAME_FIRSTNAME.Rmd)
+* Assignment 3 **solution** as [R markdown](day3/ME414_assignment3_solution.Rmd)
+
+##### Required reading
+
+*	Lake, Peter.  _Concise Guide to Databases: A Practical Introduction_. Springer, 2013.  Chapters 4-5, Relational Databases and NoSQL databases.
+*	Nield, Thomas. _Getting Started with SQL: A hands-on approach for beginners_. O’Reilly, 2016.  Entire text.
+
+##### Recommended Reading
+
+* [SQLite documentation](https://www.sqlite.org/docs.html).
+*   Bassett, L. 2015.  [_Introduction to JavaScript Object Notation: A to-the-point Guide to JSON_](http://shop.oreilly.com/product/0636920041597.do).  O'Reilly Media, Inc.
+
+
+
+#### __*Thursday, 2 August: Linear Regression [KB]*__
+
 Linear regression model and supervised learning.
 
 ##### Resources
 
-* [Lecture Notes](day3/ME414_day3.pdf)
-* [Assignment 3 as R markdown](day3/ME414_assignment3_LASTNAME_FIRSTNAME.Rmd)
-* Assignment 3 **solution** as [R markdown](day3/ME414_assignment3_solution.Rmd)
+* [Lecture Notes](day4/ME414_day4.pdf)
+* [Assignment 4 as R markdown](day4/ME414_assignment4_LASTNAME_FIRSTNAME.Rmd)
+* Assignment 4 **solution** as [R markdown](day4/ME414_assignment4_solution.Rmd)
 
 ##### Required reading:
 *  James et al., Chapter 3.
@@ -209,7 +234,7 @@ Linear regression model and supervised learning.
 
 ***
 
-#### __*Thursday, 2 August: Classification [SM]*__
+#### __*Monday, 6 August: Classification [SM]*__
 Logistic regression, discriminant analysis, Naive Bayes, evaluating model performance.
 
 ##### Resources
@@ -228,14 +253,14 @@ Logistic regression, discriminant analysis, Naive Bayes, evaluating model perfor
 
 ***
 
-#### __*Monday, 6 August: Resampling methods, model selection and regularization [SM]*__
+#### __*Tuesday, 7 August: Resampling methods, model selection and regularization [SM]*__
 Cross-validation, bootstrap, ridge and lasso.
 
 ##### Resources
 
-* [Lecture Notes](day5/ME414_day5.pdf)
-* [Assignment 5 as R markdown](day5/ME414_assignment5_LASTNAME_FIRSTNAME.Rmd)
-* Assignment 5 **solution** as [R markdown](day5/ME414_assignment5_solution.Rmd)
+* [Lecture Notes](day6/ME414_day6.pdf)
+* [Assignment 6 as R markdown](day6/ME414_assignment6_LASTNAME_FIRSTNAME.Rmd)
+* Assignment 6 **solution** as [R markdown](day6/ME414_assignment6_solution.Rmd)
 * [Dataverse replication example for PCR](http://dx.doi.org/10.7910/DVN/AER5QJ)
 
 ##### Required reading:
@@ -246,15 +271,15 @@ Cross-validation, bootstrap, ridge and lasso.
 
 ***
 
-#### __*Tuesday, 7 August: Non-linear models and tree-based methods [SM]*__
+#### __*Wednesday, 8 August: Non-linear models and tree-based methods [SM]*__
 GAMs, local regression, decision trees, random forest, boosting.
 
 ##### Resources
 
-* [Lecture Notes](day6/ME414_day6.pdf)
-* [RandomForest research example](day6/example_random_forest_Ukraine.pdf)
-* [Assignment 6 as R markdown](day6/ME414_assignment6_LASTNAME_FIRSTNAME.Rmd)
-* Assignment 6 **solution** as [R markdown](day6/ME414_assignment6_solution.Rmd)
+* [Lecture Notes](day7/ME414_day8.pdf)
+* [RandomForest research example](day7/example_random_forest_Ukraine.pdf)
+* [Assignment 7 as R markdown](day6/ME414_assignment7_LASTNAME_FIRSTNAME.Rmd)
+* Assignment 7 **solution** as [R markdown](day7/ME414_assignment6_solution.Rmd)
 
 ##### Required reading:
 * James et al., Chapter 7-8.
@@ -266,7 +291,7 @@ GAMs, local regression, decision trees, random forest, boosting.
 
 ***
 
-#### __*Wednesday, 8 August: Unsupervised learning and dimensional reduction [SM]*__
+#### __*Thursday, 9 August: Unsupervised learning and dimensional reduction [KB]*__
 Cluster analysis, PCA, correspondence analysis, association rules.
 
 ##### Resources
@@ -276,10 +301,12 @@ Cluster analysis, PCA, correspondence analysis, association rules.
 * [Assignment 7 as R markdown](day7/ME414_assignment7_LASTNAME_FIRSTNAME.Rmd)
 * Assignment 7 **solution** as [R markdown](day7/ME414_assignment7_solution.Rmd)
 
-##### Required reading:
+##### Required reading
+
 * James et al., Chapter 10.
 
-##### Recommended Reading:
+##### Recommended Reading
+
 * Lesmeister, Chapter 5, 8-9.
 * Zumel and Mount, Chapter 8.
 * Lantz, Chapters 8-9
@@ -287,64 +314,66 @@ Cluster analysis, PCA, correspondence analysis, association rules.
 
 ***
 
-#### __*Thursday, 9 August: Text analysis [JB]*__
+#### __*Monday, 13 August: Text analysis [JB]*__
 Working with text in R, sentiment analysis, dictionary methods.
 
 ##### Resources
 
-* [Lecture Notes](day8/ME414_day8.pdf)
-* [Assignment 8 as R markdown](day8/ME414_assignment8_LASTNAME_FIRSTNAME.Rmd) or [html](http://htmlpreview.github.io/?https://github.com/kbenoit/ME414/blob/master/day8/ME414_assignment8_LASTNAME_FIRSTNAME.html)
-    + sample zip file [`UKimmigTexts.zip`](day8/UKimmigTexts.zip) of texts for building a corpus
-* Assignment 8 **solution** as [R markdown](day8/ME414_assignment8_solution.Rmd)
+* [Lecture Notes](day9/ME414_day9.pdf)
+* [Assignment 9 as R markdown](day9/ME414_assignment9_LASTNAME_FIRSTNAME.Rmd) or [html](http://htmlpreview.github.io/?https://github.com/kbenoit/ME414/blob/master/day9/ME414_assignment8_LASTNAME_FIRSTNAME.html)
+    + sample zip file [`UKimmigTexts.zip`](day9/UKimmigTexts.zip) of texts for building a corpus
+* Assignment 9 **solution** as [R markdown](day9/ME414_assignment9_solution.Rmd)
 
-##### Required reading:
+##### Required reading
+
 * Grimmer, J, and B M Stewart (2013), ``Text as Data: the Promise and Pitfalls of Automatic Content Analysis Methods for Political Texts.'' _Political Analysis_.
 * Benoit, Kenneth and Alexander Herzog. In press. [``Text Analysis: Estimating Policy Preferences From Written and Spoken Words.''](http://www.kenbenoit.net/pdfs/HerzogBenoit_bookchapter.pdf).'' In _Analytics, Policy and Governance_, eds. Jennifer Bachner, Kathyrn Wagner Hill, and Benjamin Ginsberg.
 
-##### Recommended Reading:
+##### Recommended Reading
+
 * Spirling, A. (2012), ``U.S. Treaty Making with American Indians: Institutional Change and Relative Power, 1784–1911.'' _American Journal of Political Science_, 56: 84--97.
 * Herzog, A. and K. Benoit (2015), ``The most unkindest cuts: Speaker selection and expressed government dissent during economic crisis.'' _Journal of Politics_, 77(4):1157--1175.
 
 ***
 
-#### __*Monday, 13 August: Topic modelling [JB]*__
-
-##### Resources
-
-* [Lecture Notes](day9/ME414_day9.pdf)
-* [Assignment 9 as R markdown](day9/ME414_assignment9_LASTNAME_FIRSTNAME.Rmd)
-* Assignment 9 **solution** as [R markdown](day9/ME414_assignment9_solution.Rmd)
-
-
-##### Required reading:
-
-* David Blei (2012). ``Probabilistic topic models.'' _Communications of the ACM_, 55(4): 77-84.
-* Blei, David, Andrew Y. Ng, and Michael I. Jordan (2003). ``Latent dirichlet allocation.'' _Journal of Machine Learning Research_ 3: 993-1022.
-* Blei, David (2014) ``Build, Compute, Critique, Repeat: Data Analysis with Latent Variable Models.'' _Annual Review of Statistics and Its Application_, 1: 203-232.
-
-##### Recommended Reading:
-
-* Blei, D. and J. Lafferty ``Topic Models.'' In _Text Mining: Classification, clustering, and applications_, A. Srivastava and M. Sahami (eds.), pp 71-94, 2009. Chapter available [here](http://www.cs.princeton.edu/~blei/papers/BleiLafferty2009.pdf).
-* Blei, David M., and John D. Lafferty. ``Dynamic topic models.'' In _Proceedings of the 23rd international conference on machine learning_, pp. 113-120. ACM, 2006.
-* Mimno, D. (April 2012). ``Computational Historiography: Data Mining in a Century of Classics Journals.'' _Journal on Computing and Cultural Heritage_, 5 (1).
-* Lesmeister Chapter 12.
-
-***
-
-#### __*Tuesday, 14 August: Mining the Social Web [JB]*__
-Working with the Twitter API, Facebook API, JSON data, and examples.
+#### __*Tuesday, 14 August: Topic modelling [JB]*__
 
 ##### Resources
 
 * [Lecture Notes](day10/ME414_day10.pdf)
-* [General examples from the lecture](day10/day10examples_noKeys.R)
-* [Streaming example code](day10/streamRExample.R)
-* [Rest Example code](day10/restExample.R)
-* [Assignment 10 as R markdown](day10/ME414_assignment10_LASTNAME_FIRSTNAME.Rmd).  Note: This is a take-home set only, as there is no lab on Day 10.
+* [Assignment 10 as R markdown](day10/ME414_assignment10_LASTNAME_FIRSTNAME.Rmd)
+* Assignment 10 **solution** as [R markdown](day10/ME414_assignment10_solution.Rmd)
+
+
+##### Required reading
+
+* David Blei (2012). "Probabilistic topic models."" _Communications of the ACM_, 55(4): 77-84.
+* Blei, David, Andrew Y. Ng, and Michael I. Jordan (2003). "Latent dirichlet allocation." _Journal of Machine Learning Research_ 3: 993-1022.
+* Blei, David (2014) "Build, Compute, Critique, Repeat: Data Analysis with Latent Variable Models." _Annual Review of Statistics and Its Application_, 1: 203-232.
+
+##### Recommended Reading
+
+* Blei, D. and J. Lafferty "Topic Models." In _Text Mining: Classification, clustering, and applications_, A. Srivastava and M. Sahami (eds.), pp 71-94, 2009. Chapter available [here](http://www.cs.princeton.edu/~blei/papers/BleiLafferty2009.pdf).
+* Blei, David M., and John D. Lafferty. "Dynamic topic models." In _Proceedings of the 23rd international conference on machine learning_, pp. 113-120. ACM, 2006.
+* Mimno, D. (April 2012). "Computational Historiography: Data Mining in a Century of Classics Journals." _Journal on Computing and Cultural Heritage_, 5 (1).
+* Lesmeister Chapter 12.
+
+***
+
+#### __*Wednesday, 15 August: Mining the Social Web [JB]*__
+Working with the Twitter API, Facebook API, JSON data, and examples.
+
+##### Resources
+
+* [Lecture Notes](day11/ME414_day11.pdf)
+* [General examples from the lecture](day11/day11examples_noKeys.R)
+* [Streaming example code](day11/streamRExample.R)
+* [Rest Example code](day11/restExample.R)
+* [Assignment 11 as R markdown](day11/ME414_assignment11_LASTNAME_FIRSTNAME.Rmd).  
 
 ##### Required reading:
 
-* Broniatowski, David A, Michael J Paul, and Mark Dredze. 2013. "National and Local Influenza Surveillance Through Twitter: an Analysis of the 2012-2013 Influenza Epidemic" _PLoS ONE_ 8(12): 83672–78. [PDF here](day10/Broniatowski.pdf)
+* Broniatowski, David A, Michael J Paul, and Mark Dredze. 2013. "National and Local Influenza Surveillance Through Twitter: an Analysis of the 2012-2013 Influenza Epidemic" _PLoS ONE_ 8(12): 83672–78. [PDF here](day11/Broniatowski.pdf)
 * Twitter Authentication setup:
     + [Official](https://dev.twitter.com/oauth/overview/application-owner-access-tokens)
     + [Walkthrough](http://wiki.communitydata.cc/Twitter_authentication_setup)  
@@ -354,7 +383,7 @@ Working with the Twitter API, Facebook API, JSON data, and examples.
 
 
 ##### Recommended Reading:
-* [Earthquake shakes Twitter users: real-time event detection by social sensors](day10/Sakaki_Earthquake.pdf)
+* [Earthquake shakes Twitter users: real-time event detection by social sensors](day11/Sakaki_Earthquake.pdf)
 * http://rcrastinate.blogspot.co.uk/2015/02/mapping-world-with-tweets-including-gif.html
 * https://github.com/twitter/AnomalyDetection
 * https://github.com/pablobarbera/streamR
@@ -362,7 +391,7 @@ Working with the Twitter API, Facebook API, JSON data, and examples.
 * Matthew Russell (2013). _Mining the Social Web_. O'Reilly Media. 2nd edition.
 
 
-#### __*Wednesday, 15 August: TBC*__
+#### __*Thursday, 15 August: TBC*__
 
 
 #### __*Thursday, 16 August: TBC*__
