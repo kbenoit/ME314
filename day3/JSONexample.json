@@ -1,0 +1,85 @@
+{  
+   "created_at":"Mon Jan 05 19:44:30 +0000 2015",
+   "id":5.52188912006103e+017,
+   "id_str":"552188912006103040",
+   "text":"That some real MESSED UP SHIT",
+   "source":"<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+   "truncated":false,
+   "in_reply_to_status_id":null,
+   "in_reply_to_status_id_str":null,
+   "in_reply_to_user_id":null,
+   "in_reply_to_user_id_str":null,
+   "in_reply_to_screen_name":null,
+   "user":{  
+      "id":242053405,
+      "id_str":"242053405",
+      "name":"(s)TAN DOLO \u2708\ufe0f",
+      "screen_name":"NinTANDO_Me",
+      "location":"",
+      "profile_location":null,
+      "description":"Just a man who suffers from wrong thinking. YOUNG VISIONARY",
+      "url":null,
+      "entities":{  
+         "description":{  
+            "urls":[  
+
+            ]
+         }
+      },
+      "protected":false,
+      "followers_count":202,
+      "friends_count":134,
+      "listed_count":2,
+      "created_at":"Sun Jan 23 20:45:07 +0000 2011",
+      "favourites_count":56,
+      "utc_offset":-28800,
+      "time_zone":"Pacific Time (US & Canada)",
+      "geo_enabled":false,
+      "verified":false,
+      "statuses_count":16204,
+      "lang":"en",
+      "contributors_enabled":false,
+      "is_translator":false,
+      "is_translation_enabled":false,
+      "profile_background_color":"131516",
+      "profile_background_image_url":"http://abs.twimg.com/images/themes/theme14/bg.gif",
+      "profile_background_image_url_https":"https://abs.twimg.com/images/themes/theme14/bg.gif",
+      "profile_background_tile":true,
+      "profile_image_url":"http://pbs.twimg.com/profile_images/548314548365979649/Ze-lAopY_normal.jpeg",
+      "profile_image_url_https":"https://pbs.twimg.com/profile_images/548314548365979649/Ze-lAopY_normal.jpeg",
+      "profile_banner_url":"https://pbs.twimg.com/profile_banners/242053405/1368902652",
+      "profile_link_color":"009999",
+      "profile_sidebar_border_color":"EEEEEE",
+      "profile_sidebar_fill_color":"EFEFEF",
+      "profile_text_color":"333333",
+      "profile_use_background_image":true,
+      "default_profile":false,
+      "default_profile_image":false,
+      "following":false,
+      "follow_request_sent":false,
+      "notifications":false
+   },
+   "geo":null,
+   "coordinates":null,
+   "place":null,
+   "contributors":null,
+   "retweet_count":0,
+   "favorite_count":0,
+   "entities":{  
+      "hashtags":[  
+
+      ],
+      "symbols":[  
+
+      ],
+      "user_mentions":[  
+
+      ],
+      "urls":[  
+
+      ]
+   },
+   "favorited":false,
+   "retweeted":false,
+   "lang":"en"
+}

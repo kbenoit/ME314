@@ -5,7 +5,7 @@
 
 [Kenneth Benoit](kbenoit@lse.ac.uk), Department of Methodology, LSE  
 [Slava Mikhaylov](s.mikhaylov@essex.ac.uk), Institute for Analytics and Data Science, University of Essex  
-[Jack Blumenau](J.Blumenau@lse.ac.uk), Department of Political Science, UCL
+[Jack Blumenau](J.Blumenau@ucl.ac.uk), Department of Political Science, UCL
 
 This repository contains the class materials for the [Research Methods, Data Science, and Mathematics](https://www.lse.ac.uk/study-at-lse/Summer-Schools/Summer-School/Courses/Secure/Research-Methods-Data-Science-and-Mathematics) course [*ME314 Introduction to Data Science and Big Data Analytics*](https://www.lse.ac.uk/study-at-lse/Summer-Schools/Summer-School/Courses/Secure/Research-Methods-Data-Science-and-Mathematics/ME314) taught in July-August 2018 by Kenneth Benoit, Slava Mikhaylov, and Jack Blumenau.  
 
@@ -99,7 +99,7 @@ Each homework will be a single file in the [RMarkdown](http://rmarkdown.rstudio.
 
 2.  Renaming the starter files.  
 
-    For example, the first assignment file is named `ME414_assignment1_LASTNAME_FIRSTNAME.Rmd`, which you will need to rename by replacing the uppercase terms with your own last and first names, e.g.  `ME414_assignment1_Bloggs_Joe.Rmd`.
+    For example, the first assignment file is named `ME314_assignment1_LASTNAME_FIRSTNAME.Rmd`, which you will need to rename by replacing the uppercase terms with your own last and first names, e.g.  `ME314_assignment1_Bloggs_Joe.Rmd`.
 
 3.  From RStudio, you can create an HTML output file with your evaluated code, figure, and text answers by clicking the "Knit HTML" button in the top of the editor pane in RStudio.  The resulting HTML file will be saved in your working directory.
 
@@ -143,12 +143,12 @@ You can read more about using GitHub with RStudio in Hadley Wickham's _R Package
 We will use this session to get to know the range of interests and experience students bring to the class, as well as to survey the machine learning approaches to be covered. We will also discuss and demonstrate the R software.
 
 ##### Resources
-* [Lecture Notes Part 1](day1/ME414_day1.1.pdf)
-* [Lecture Notes Part 2](day1/ME414_day1.2.pdf)
-* [Assignment 1 as R markdown](day1/ME414_assignment1_LASTNAME_FIRSTNAME.Rmd)
-* Assignment 1 **solution** as [R markdown](day1/ME414_assignment1_solution.Rmd)
+* [Lecture Notes Part 1](day1/ME314_day1.1.pdf)
+* [Lecture Notes Part 2](day1/ME314_day1.2.pdf)
+* [Assignment 1 as R markdown](day1/ME314_assignment1_LASTNAME_FIRSTNAME.Rmd)
+* Assignment 1 **solution** as [R markdown](day1/ME314_assignment1_solution.Rmd)
 
-<!--- * [The results of the data science quiz](http://htmlpreview.github.com/?https://github.com/kbenoit/ME414/blob/master/day1/data_science_quiz.html) and the [anonymized dataset in .csv format](day1/data_science_quiz_results.csv). -->
+<!--- * [The results of the data science quiz](http://htmlpreview.github.com/?https://github.com/kbenoit/ME314/blob/master/day1/data_science_quiz.html) and the [anonymized dataset in .csv format](day1/data_science_quiz_results.csv). -->
 
 ##### Required reading
 
@@ -176,8 +176,8 @@ This week introduces the concept of data "beyond the spreadsheet", the rectangul
 ##### Resources
 
 * [Lecture Notes](day2/)
-* [Assignment 2 as R markdown](day2/ME414_assignment2_LASTNAME_FIRSTNAME.Rmd)
-* Assignment 2 **solution** as [R markdown](day2/ME414_assignment2_solution.Rmd)
+* [Assignment 2 as R markdown](day2/ME314_assignment2_LASTNAME_FIRSTNAME.Rmd)
+* Assignment 2 **solution** as [R markdown](day2/ME314_assignment2_solution.Rmd)
 * [Altaf's resource on **dplyr** and the "tidyverse"](https://altaf-ali.github.io/tidydata_tutorial)
 * [Altaf's resource on **ggplot2**](https://altaf-ali.github.io/ggplot_tutorial)
 
@@ -191,7 +191,7 @@ This week introduces the concept of data "beyond the spreadsheet", the rectangul
 * Reshaping data in Python: "[Reshaping and Pivot Tables](https://pandas.pydata.org/pandas-docs/stable/reshaping.html)".
 * Robin Linderborg, "[Reshaping Data in Python](https://hackernoon.com/reshaping-data-in-python-fa27dda2ff77)", 20 Jan 2017.
 
-
+***
 
 #### __*Wednesday, 1 August: Working with Databases [KB*__]
 
@@ -200,8 +200,8 @@ We will return to database normalization, and how to implement this using good p
 ##### Resources
 
 * [Lecture Notes](day3/)
-* [Assignment 3 as R markdown](day3/ME414_assignment3_LASTNAME_FIRSTNAME.Rmd)
-* Assignment 3 **solution** as [R markdown](day3/ME414_assignment3_solution.Rmd)
+* [Assignment 3 as R markdown](day3/ME314_assignment3_LASTNAME_FIRSTNAME.Rmd)
+* Assignment 3 **solution** as [R markdown](day3/ME314_assignment3_solution.Rmd)
 
 ##### Required reading
 
@@ -221,14 +221,16 @@ Linear regression model and supervised learning.
 
 ##### Resources
 
-* [Lecture Notes](day4/ME414_day4.pdf)
-* [Assignment 4 as R markdown](day4/ME414_assignment4_LASTNAME_FIRSTNAME.Rmd)
-* Assignment 4 **solution** as [R markdown](day4/ME414_assignment4_solution.Rmd)
+* [Lecture Notes](day4/ME314_day4.pdf)
+* [Assignment 4 as R markdown](day4/ME314_assignment4_LASTNAME_FIRSTNAME.Rmd)
+* Assignment 4 **solution** as [R markdown](day4/ME314_assignment4_solution.Rmd)
 
-##### Required reading:
+##### Required Reading
+
 *  James et al., Chapter 3.
 
-##### Recommended Reading:
+##### Recommended Reading
+
 * Zumel and Mount, Chapter 7.1.
 * Lantz, Chapter 6
 
@@ -239,14 +241,16 @@ Logistic regression, discriminant analysis, Naive Bayes, evaluating model perfor
 
 ##### Resources
 
-* [Lecture Notes](day4/ME414_day4.pdf)
-* [Assignment 4 as R markdown](day4/ME414_assignment4_LASTNAME_FIRSTNAME.Rmd)
-* Assignment 4 **solution** as [R markdown](day4/ME414_assignment4_solution.Rmd)
+* [Lecture Notes](day4/ME314_day4.pdf)
+* [Assignment 4 as R markdown](day4/ME314_assignment4_LASTNAME_FIRSTNAME.Rmd)
+* Assignment 4 **solution** as [R markdown](day4/ME314_assignment4_solution.Rmd)
 
-##### Required reading:
+##### Required Reading
+
 * James et al., Chapter 4.
 
-##### Recommended Reading:
+##### Recommended Reading
+
 * Lesmeister, Chapter 3.
 * Zumel and Mount, Chapters 5, 6, 7.2.
 * Lantz, Chapters 3-4, 10.
@@ -258,15 +262,17 @@ Cross-validation, bootstrap, ridge and lasso.
 
 ##### Resources
 
-* [Lecture Notes](day6/ME414_day6.pdf)
-* [Assignment 6 as R markdown](day6/ME414_assignment6_LASTNAME_FIRSTNAME.Rmd)
-* Assignment 6 **solution** as [R markdown](day6/ME414_assignment6_solution.Rmd)
+* [Lecture Notes](day6/ME314_day6.pdf)
+* [Assignment 6 as R markdown](day6/ME314_assignment6_LASTNAME_FIRSTNAME.Rmd)
+* Assignment 6 **solution** as [R markdown](day6/ME314_assignment6_solution.Rmd)
 * [Dataverse replication example for PCR](http://dx.doi.org/10.7910/DVN/AER5QJ)
 
-##### Required reading:
+##### Required Reading
+
 * James et al., Chapter 5-6.
 
-##### Recommended Reading:
+##### Recommended Reading
+
 * Lesmeister, Chapter 4.
 
 ***
@@ -276,15 +282,17 @@ GAMs, local regression, decision trees, random forest, boosting.
 
 ##### Resources
 
-* [Lecture Notes](day7/ME414_day8.pdf)
+* [Lecture Notes](day7/ME314_day8.pdf)
 * [RandomForest research example](day7/example_random_forest_Ukraine.pdf)
-* [Assignment 7 as R markdown](day6/ME414_assignment7_LASTNAME_FIRSTNAME.Rmd)
-* Assignment 7 **solution** as [R markdown](day7/ME414_assignment6_solution.Rmd)
+* [Assignment 7 as R markdown](day6/ME314_assignment7_LASTNAME_FIRSTNAME.Rmd)
+* Assignment 7 **solution** as [R markdown](day7/ME314_assignment6_solution.Rmd)
 
-##### Required reading:
+##### Required Reading
+
 * James et al., Chapter 7-8.
 
-##### Recommended Reading:
+##### Recommended Reading
+
 * Lesmeister, Chapter 6.
 * Zumel and Mount, Chapter 9.1-9.3.
 * Muchlinksi, D., Siroky, D., Jingrui, H., Kocher, M., (2016) "Comparing Random Forest with Logistic Regression for Predicting Class-Imbalanced Civil War Onset Data." _Political Analysis_, 24(1): 87-103.
@@ -296,10 +304,10 @@ Cluster analysis, PCA, correspondence analysis, association rules.
 
 ##### Resources
 
-* [Lecture Notes](day7/ME414_day7.pdf)
+* [Lecture Notes](day7/ME314_day7.pdf)
 * [Application example: smart meter analysis Notes](day7/application_example_clustering_rforest.pdf)
-* [Assignment 7 as R markdown](day7/ME414_assignment7_LASTNAME_FIRSTNAME.Rmd)
-* Assignment 7 **solution** as [R markdown](day7/ME414_assignment7_solution.Rmd)
+* [Assignment 7 as R markdown](day7/ME314_assignment7_LASTNAME_FIRSTNAME.Rmd)
+* Assignment 7 **solution** as [R markdown](day7/ME314_assignment7_solution.Rmd)
 
 ##### Required reading
 
@@ -319,10 +327,10 @@ Working with text in R, sentiment analysis, dictionary methods.
 
 ##### Resources
 
-* [Lecture Notes](day9/ME414_day9.pdf)
-* [Assignment 9 as R markdown](day9/ME414_assignment9_LASTNAME_FIRSTNAME.Rmd) or [html](http://htmlpreview.github.io/?https://github.com/kbenoit/ME414/blob/master/day9/ME414_assignment8_LASTNAME_FIRSTNAME.html)
+* [Lecture Notes](day9/ME314_day9.pdf)
+* [Assignment 9 as R markdown](day9/ME314_assignment9_LASTNAME_FIRSTNAME.Rmd) or [html](http://htmlpreview.github.io/?https://github.com/kbenoit/ME314/blob/master/day9/ME314_assignment8_LASTNAME_FIRSTNAME.html)
     + sample zip file [`UKimmigTexts.zip`](day9/UKimmigTexts.zip) of texts for building a corpus
-* Assignment 9 **solution** as [R markdown](day9/ME414_assignment9_solution.Rmd)
+* Assignment 9 **solution** as [R markdown](day9/ME314_assignment9_solution.Rmd)
 
 ##### Required reading
 
@@ -338,11 +346,13 @@ Working with text in R, sentiment analysis, dictionary methods.
 
 #### __*Tuesday, 14 August: Topic modelling [JB]*__
 
+Latent Dirichlet Allocation, Correlated Topic Model, Structural Topic Model.
+
 ##### Resources
 
-* [Lecture Notes](day10/ME414_day10.pdf)
-* [Assignment 10 as R markdown](day10/ME414_assignment10_LASTNAME_FIRSTNAME.Rmd)
-* Assignment 10 **solution** as [R markdown](day10/ME414_assignment10_solution.Rmd)
+* [Lecture Notes](day10/ME314_day10.pdf)
+* [Assignment 10 as R markdown](day10/ME314_assignment10_LASTNAME_FIRSTNAME.Rmd)
+* Assignment 10 **solution** as [R markdown](day10/ME314_assignment10_solution.Rmd)
 
 
 ##### Required reading
@@ -365,11 +375,11 @@ Working with the Twitter API, Facebook API, JSON data, and examples.
 
 ##### Resources
 
-* [Lecture Notes](day11/ME414_day11.pdf)
+* [Lecture Notes](day11/ME314_day11.pdf)
 * [General examples from the lecture](day11/day11examples_noKeys.R)
 * [Streaming example code](day11/streamRExample.R)
 * [Rest Example code](day11/restExample.R)
-* [Assignment 11 as R markdown](day11/ME414_assignment11_LASTNAME_FIRSTNAME.Rmd).  
+* [Assignment 11 as R markdown](day11/ME314_assignment11_LASTNAME_FIRSTNAME.Rmd).  
 
 ##### Required reading:
 
@@ -382,7 +392,8 @@ Working with the Twitter API, Facebook API, JSON data, and examples.
     + [Overview of streaming API](https://dev.twitter.com/streaming/overview)
 
 
-##### Recommended Reading:
+##### Recommended Reading
+
 * [Earthquake shakes Twitter users: real-time event detection by social sensors](day11/Sakaki_Earthquake.pdf)
 * http://rcrastinate.blogspot.co.uk/2015/02/mapping-world-with-tweets-including-gif.html
 * https://github.com/twitter/AnomalyDetection
@@ -390,18 +401,28 @@ Working with the Twitter API, Facebook API, JSON data, and examples.
 * Zafarani et al., Chapters 1-4.
 * Matthew Russell (2013). _Mining the Social Web_. O'Reilly Media. 2nd edition.
 
+***
 
-#### __*Thursday, 15 August: TBC*__
+#### __*Thursday, 16 August: Network Analysis [JB]*__
 
+Working with network data, network data types, centrality measures.
 
-#### __*Thursday, 16 August: TBC*__
+##### Required reading
 
+* Stephen Borgatti, Ajay Mehra, Daniel Brass, Giuseppe Labianca. 2009. "Network Analysis in the Social Sciences" _Science_ 323, 892-895
 
+##### Recommended Reading
+
+* [Using Metadata to Find Paul Revere](https://kieranhealy.org/blog/archives/2013/06/09/using-metadata-to-find-paul-revere/)
+* G. Erkan and D. Radev. 2004. "LexRank: Graph-based lexical centrality as salience in text summarization" _Journal of Artificial Intelligence Research_ 22, 457 - 479
+* Miller McPherson, Lynn Smith-Lovin, and James M Cook. 2001. "Birds of a Feather: Homophily in Social Networks" _Annual Review of Sociology_ 27, 415-44
+
+***
 
 ### Assessment
 
-#### __Exam: Friday, 27 August, Time: 14:00-16:00, Room: TBC__
+#### __Exam: Friday, 17 August, Time and Room TBC__
 
-* __Instructions:__  Complete and submit the exam just as you would any lab assignment: by renaming the file, editing the R Markdown, knitting, and submitting through Moodle your knitted HTML file. Moodle page for the course is linked [here:](https://shortcourses.lse.ac.uk/course/view.php?id=158).
+* __Instructions:__  Complete and submit the exam just as you would any lab assignment: by renaming the file, editing the R Markdown, knitting, and submitting through Moodle your knitted HTML file.
 * __Formatting:__  Put your own textual answers in boldface (using `**boldface type**` in RMarkdown), so that we can easily identify them when reviewing your HTML file.
 * __Deadline:__ Monday 20 August 17:00 London time (GMT+1)
