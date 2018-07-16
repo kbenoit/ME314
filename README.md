@@ -322,7 +322,7 @@ Cluster analysis, PCA, correspondence analysis, association rules.
 
 ***
 
-#### __*Monday, 13 August: Text analysis [JB]*__
+#### __*Monday, 13 August: Text analysis [KB]*__
 Working with text in R, sentiment analysis, dictionary methods.
 
 ##### Resources
